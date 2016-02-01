@@ -67,7 +67,7 @@ Cluster.prototype.launch = function launch(callback) {
 
         // First make sure TChannel is accepting connections.
         console.log('TChannel is listening on port ' + (this.basePort + index));
-        tchannel.listen(i, this.host, listenCb(ringpop, index));
+        tchannel.listen(index + this.basePort, this.host, listenCb(ringpop, index));
     }
 
     function listenCb(ringpop, index) {
@@ -106,7 +106,7 @@ function after(count, callback) {
 
 function bootstrapCallbackBuilder(size) {
     var bootstrapsLeft = size;
-    function bootstrapCallback(ringpop, i) {
+    function bootstrapCallback(ringpop, index) {
         return function onBootstrap(err) {
             if (err) {
                 console.log('Error: Could not bootstrap ' + ringpop.whoami());
