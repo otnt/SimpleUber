@@ -48,7 +48,7 @@ Cluster.prototype.launch = function launch(callback) {
     //var done = after(self.size, function onDone(err) {
     //    callback(err, ringpops);
     //});
-    var done = bootstrapCallbackBuilder(self.size, ringpops, this.basePort)
+    var bootstrapCallback = bootstrapCallbackBuilder(self.size, ringpops, this.basePort)
 
     for (var index = 0; index < this.size; index++) {
         var tchannel = new TChannel();
@@ -68,7 +68,13 @@ Cluster.prototype.launch = function launch(callback) {
 
         // First make sure TChannel is accepting connections.
         console.log('TChannel is listening on port ' + (this.basePort + index));
-        tchannel.listen(index + this.basePort, this.host, listenCb(ringpop, index));
+        tchannel.listen(index + this.basePort, this.host, //listenCb(ringpop, index));
+        function onListen() {
+          ringpop.bootstrap(self.bootstrapNodes, bootstrapCallback(ringpop, index));
+
+          // This is how you wire up a handler for forwarded requests
+          ringpop.on('request', forwardedCallback());
+        }
     }
 
     function listenCb(ringpop, index) {
@@ -109,7 +115,7 @@ function bootstrapCallbackBuilder(size, _ringpops, basePort) {
     var bootstrapsLeft = size;
     var ringpops = _ringpops;
     var httpPort = basePort * 2;
-    function bootstrapCallback(ringpop, index) {
+    return function bootstrapCallback(ringpop, index) {
         return function onBootstrap(err) {
             if (err) {
                 console.log('Error: Could not bootstrap ' + ringpop.whoami());
@@ -125,7 +131,6 @@ function bootstrapCallbackBuilder(size, _ringpops, basePort) {
             }
         };
     }
-    return bootstrapCallback;
 }
 
 // In this example, forwarded requests are immediately ended. Fill in with
@@ -135,27 +140,6 @@ function forwardedCallback() {
         console.log('Ringpop handled forwarded ');
         res.end();
     }
-}
-
-if (require.main === module) {
-    // Launch a Ringpop cluster of arbitrary size.
-    var cluster = new Cluster({
-        name: 'mycluster',
-        size: 2,
-        basePort: 3000
-    });
-
-    // When all nodes have been bootstrapped, your
-    // Ringpop cluster will be ready for use.
-    cluster.launch(function onLaunch(err, ringpops) {
-        if (err) {
-            console.error('Error: failed to launch cluster');
-            process.exit(1);
-        }
-
-        console.log('Ringpop cluster is ready!');
-        createHttpServers(ringpops, cluster.basePort);
-    });
 }
 
 // These HTTP servers will act as the front-end
@@ -180,6 +164,27 @@ function createHttpServers(ringpops, httpPort) {
         http.listen(port, function onListen() {
             console.log('HTTP is listening on ' + port);
         });
+    });
+}
+
+if (require.main === module) {
+    // Launch a Ringpop cluster of arbitrary size.
+    var cluster = new Cluster({
+        name: 'mycluster',
+        size: 2,
+        basePort: 3000
+    });
+
+    // When all nodes have been bootstrapped, your
+    // Ringpop cluster will be ready for use.
+    cluster.launch(function onLaunch(err, ringpops) {
+        if (err) {
+            console.error('Error: failed to launch cluster');
+            process.exit(1);
+        }
+
+        console.log('Ringpop cluster is ready!');
+        createHttpServers(ringpops, cluster.basePort);
     });
 }
 
