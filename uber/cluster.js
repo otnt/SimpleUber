@@ -19,6 +19,7 @@
 // THE SOFTWARE.
 'use strict';
 
+var express = require('express');
 var Ringpop = require('../index.js');
 var TChannel = require('tchannel');
 
