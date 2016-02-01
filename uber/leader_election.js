@@ -90,7 +90,7 @@ if (require.main === module) {
                 pyshell.on('message', function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
                   if (ringpop.handleOrProxy(key, req, res)) {
-                      console.log('Ringpop ' + ringpop.whoami() + ' handled request %o', req.query);
+                      console.log('Ringpop ' + ringpop.whoami() + ' handled request ', req.query);
                       res.end();
                   } else {
                       console.log('Ringpop ' + ringpop.whoami() +
