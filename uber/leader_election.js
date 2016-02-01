@@ -24,6 +24,9 @@ var logger = require('winston');
 var parseArgs = require('./parse_args.js');
 var express = require('express');
 var PythonShell = require('python-shell');
+PythonShell.defaultOptions = {
+  scriptPath: '../../uber'
+};
 
 
 var LEADER_KEY = 'LEADER';
