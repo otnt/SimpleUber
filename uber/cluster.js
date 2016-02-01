@@ -48,7 +48,7 @@ Cluster.prototype.launch = function launch(callback) {
     //var done = after(self.size, function onDone(err) {
     //    callback(err, ringpops);
     //});
-    var bootstrapCallback = bootstrapCallbackBuilder(self.size, ringpops, this.basePort)
+    var bootstrapCallback = bootstrapCallbackBuilder(self.size, ringpops, this.basePort, callback)
 
     for (var index = 0; index < this.size; index++) {
         var tchannel = new TChannel();
@@ -105,7 +105,7 @@ function after(count, callback) {
     };
 }
 
-function bootstrapCallbackBuilder(size, _ringpops, basePort) {
+function bootstrapCallbackBuilder(size, _ringpops, basePort, callback) {
     var bootstrapsLeft = size;
     var ringpops = _ringpops;
     var httpPort = basePort * 2;
@@ -122,6 +122,7 @@ function bootstrapCallbackBuilder(size, _ringpops, basePort) {
             if (bootstrapsLeft === 0) {
                 console.log('Ringpop cluster is ready!');
                 createHttpServers(ringpops, httpPort);
+                callback(err, ringpops);
             }
         };
     }
