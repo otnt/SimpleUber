@@ -90,7 +90,7 @@ if (require.main === module) {
                 var log = req.params.log;
                 var latlog = {'lat':lat, 'log':log};
                 pyshell.send(latlog);
-                console.log("already sent " latlog);
+                console.log("already sent " + latlog);
                 pyshell.on('message', function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
                   console.log(key);
