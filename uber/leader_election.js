@@ -83,22 +83,24 @@ if (require.main === module) {
         ringpops.forEach(function each(ringpop, index) {
             var http = express();
             var pyshell = new PythonShell('get_id.py');
+            var req, res;
     
             // Define a single HTTP endpoint that 'handles' or forwards
-            http.get('/loc', function onReq(req, res) {
-                var lat = req.query.lat;
-                var log = req.query.log;
-                pyshell.send(JSON.stringify(req.query)).end(function(err){if(err) throw err;})
-                pyshell.on('message', function (key) {
-                  // received a message sent from the Python script (a simple "print" statement)
-                  if (ringpop.handleOrProxy(key, req, res)) {
-                      console.log('Ringpop ' + ringpop.whoami() + ' handled request %o', req.params);
-                      res.end();
-                  } else {
-                      console.log('Ringpop ' + ringpop.whoami() +
-                          ' forwarded request %o', req.params);
-                  }
-                });
+            http.get('/loc', function onReq(_req, _res) {
+                req = _req;
+                res = _res;
+                pyshell.send(JSON.stringify(_req.query));
+            });
+
+            pyshell.on('message', function (key) {
+              // received a message sent from the Python script (a simple "print" statement)
+              if (ringpop.handleOrProxy(key, req, res)) {
+                  console.log('Ringpop ' + ringpop.whoami() + ' handled request %o', req.params);
+                  res.end();
+              } else {
+                  console.log('Ringpop ' + ringpop.whoami() +
+                      ' forwarded request %o', req.params);
+              }
             });
 
             var port = cluster.basePort * 2 + index; // HTTP will need its own port
