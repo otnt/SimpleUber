@@ -111,6 +111,7 @@ function after(count, callback) {
 function forwardedCallback(ringpop) {
     return function onRequest(req, res) {
         var url_parts = url.parse(req.url, true);
+        console.log("print out url_parts");
         for(var b in url_parts.query) {
           console.log(b);
         }
