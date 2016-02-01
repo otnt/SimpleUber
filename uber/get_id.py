@@ -23,6 +23,7 @@ def get_id(latitude, longitude, min_level, max_level):
     return cellid.id() #make sure only one cell is return
 
 if __name__ == '__main__':
-  for line in sys.stdin:
-    latlog = json.loads(line)
-    print get_id(float(latlog['lat']), float(latlog['log']), 12, 12) 
+    while True:
+      line = raw_input()
+      latlog = json.loads(line)
+      print get_id(float(latlog['lat']), float(latlog['log']), 12, 12) 

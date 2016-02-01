@@ -81,13 +81,13 @@ if (require.main === module) {
         // These HTTP servers will act as the front-end
         // for the Ringpop cluster.
         ringpops.forEach(function each(ringpop, index) {
-            var pyshell = new PythonShell('get_id.py');
             var http = express();
     
             // Define a single HTTP endpoint that 'handles' or forwards
             http.get('/loc', function onReq(req, res) {
                 var lat = req.query.lat;
                 var log = req.query.log;
+                var pyshell = new PythonShell('get_id.py');
                 pyshell.send(JSON.stringify(req.query)).end(function(err){if(err) throw err;})
                 pyshell.on('message', function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
