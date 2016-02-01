@@ -45,9 +45,10 @@ function Cluster(opts) {
 Cluster.prototype.launch = function launch(callback) {
     var self = this;
     var ringpops = [];
-    var done = after(self.size, function onDone(err) {
-        callback(err, ringpops);
-    });
+    //var done = after(self.size, function onDone(err) {
+    //    callback(err, ringpops);
+    //});
+    var bootstrapCallback = bootstrapCallbackBuilder(self.size, ringpops, this.basePort, callback)
 
     for (var index = 0; index < this.size; index++) {
         var tchannel = new TChannel();
@@ -67,14 +68,14 @@ Cluster.prototype.launch = function launch(callback) {
 
         // First make sure TChannel is accepting connections.
         console.log('TChannel is listening on port ' + (this.basePort + index));
-        tchannel.listen(index + this.basePort, this.host, listenCb(ringpop));
+        tchannel.listen(index + this.basePort, this.host, listenCb(ringpop, index));
     }
 
     function listenCb(ringpop, index) {
         // When TChannel is listening, bootstrap Ringpop. It'll
         // try to join its friends in the bootstrap list.
         return function onListen() {
-          ringpop.bootstrap(self.bootstrapNodes, done);
+          ringpop.bootstrap(self.bootstrapNodes, done(ringpop, index));
 
           // This is how you wire up a handler for forwarded requests
           ringpop.on('request', forwardedCallback());
@@ -136,6 +137,31 @@ function forwardedCallback() {
     }
 }
 
+// These HTTP servers will act as the front-end
+// for the Ringpop cluster.
+function createHttpServers(ringpops, httpPort) {
+    ringpops.forEach(function each(ringpop, index) {
+        var http = express();
+
+        // Define a single HTTP endpoint that 'handles' or forwards
+        http.get('/objects/:id', function onReq(req, res) {
+            var key = req.params.id;
+            if (ringpop.handleOrProxy(key, req, res)) {
+                console.log('Ringpop ' + ringpop.whoami() + ' handled ' + key);
+                res.end();
+            } else {
+                console.log('Ringpop ' + ringpop.whoami() +
+                    ' forwarded ' + key);
+            }
+        });
+
+        var port = httpPort + index; // HTTP will need its own port
+        http.listen(port, function onListen() {
+            console.log('HTTP is listening on ' + port);
+        });
+    });
+}
+
 if (require.main === module) {
     // Launch a Ringpop cluster of arbitrary size.
     var cluster = new Cluster({
@@ -153,6 +179,7 @@ if (require.main === module) {
         }
 
         console.log('Ringpop cluster is ready!');
+        createHttpServers(ringpops, cluster.basePort);
     });
 }
 
