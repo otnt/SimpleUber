@@ -53,6 +53,7 @@ App.prototype.chooseLeader = function chooseLeader() {
     }
 };
 
+
 if (require.main === module) {
     var cluster = new Cluster(parseArgs());
 
