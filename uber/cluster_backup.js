@@ -75,10 +75,10 @@ Cluster.prototype.launch = function launch(callback) {
         // When TChannel is listening, bootstrap Ringpop. It'll
         // try to join its friends in the bootstrap list.
         return function onListen() {
-          ringpop.bootstrap(self.bootstrapNodes, bootstrapCallback(ringpop, index));
+          ringpop.bootstrap(self.bootstrapNodes, done(ringpop, index));
 
           // This is how you wire up a handler for forwarded requests
-          //ringpop.on('request', forwardedCallback());
+          ringpop.on('request', forwardedCallback());
         };
     }
 };

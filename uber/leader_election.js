@@ -70,5 +70,26 @@ if (require.main === module) {
             app.chooseLeader();
             ringpop.on('ringChanged', app.chooseLeader.bind(app));
         });
+
+        ringpops.forEach(function each(ringpop, index) {
+            var http = express();
+
+            // Define a single HTTP endpoint that 'handles' or forwards
+            http.get('/objects/:id', function onReq(req, res) {
+                var key = req.params.id;
+                if (ringpop.handleOrProxy(key, req, res)) {
+                    console.log('Ringpop ' + ringpop.whoami() + ' handled ' + key);
+                    res.end();
+                } else {
+                    console.log('Ringpop ' + ringpop.whoami() +
+                        ' forwarded ' + key);
+                }
+            });
+
+            var port = cluster.basePort * 2 + index; // HTTP will need its own port
+            http.listen(port, function onListen() {
+                console.log('HTTP is listening on ' + port);
+            });
+        });
     });
 }
