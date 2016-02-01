@@ -161,6 +161,12 @@ if (require.main === module) {
 // These HTTP servers will act as the front-end
 // for the Ringpop cluster.
 function createHttpServers(ringpops, basePort) {
+    console.log(ringpops);
+    console.log(ringpops.size);
+    ringpops.forEach(function each(ringpop, index) {
+      console.log(ringpop);
+      console.log(index);
+    })
     ringpops.forEach(function each(ringpop, index) {
         var http = express();
 
