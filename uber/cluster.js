@@ -77,7 +77,7 @@ Cluster.prototype.launch = function launch(callback) {
           ringpop.bootstrap(self.bootstrapNodes, done);
 
           // This is how you wire up a handler for forwarded requests
-          ringpop.on('request', forwardedCallback());
+          ringpop.on('request', forwardedCallback(ringpop));
         };
     }
 };
@@ -105,34 +105,11 @@ function after(count, callback) {
     };
 }
 
-function bootstrapCallbackBuilder(size, _ringpops, basePort, callback) {
-    var bootstrapsLeft = size;
-    var ringpops = _ringpops;
-    var httpPort = basePort * 2;
-    return function bootstrapCallback(ringpop, index) {
-        return function onBootstrap(err) {
-            if (err) {
-                console.log('Error: Could not bootstrap ' + ringpop.whoami());
-                process.exit(1);
-            }
-    
-            console.log('Ringpop ' + ringpop.whoami() + ' has bootstrapped!');
-            bootstrapsLeft--;
-    
-            if (bootstrapsLeft === 0) {
-                console.log('Ringpop cluster is ready!');
-                createHttpServers(ringpops, httpPort);
-                callback(err, ringpops);
-            }
-        };
-    }
-}
-
 // In this example, forwarded requests are immediately ended. Fill in with
 // your own application logic.
-function forwardedCallback() {
+function forwardedCallback(ringpop) {
     return function onRequest(req, res) {
-        console.log('Ringpop handled forwarded ');
+        console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ' + key);
         res.end();
     }
 }
