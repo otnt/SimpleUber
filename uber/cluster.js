@@ -65,13 +65,14 @@ Cluster.prototype.launch = function launch(callback) {
         ringpops.push(ringpop);
 
         // First make sure TChannel is accepting connections.
-        tchannel.listen(i, this.host, listenCb(ringpop));
+        tchannel.listen(i, this.host, listenCb(ringpop, i));
     }
 
 
-    function listenCb(ringpop) {
+    function listenCb(ringpop, port) {
         // When TChannel is listening, bootstrap Ringpop. It'll
         // try to join its friends in the bootstrap list.
+        console.log('TChannel is listening on port ' + port);
         return function onListen() {
             ringpop.bootstrap(self.bootstrapNodes, done);
         };
