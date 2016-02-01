@@ -89,7 +89,7 @@ if (require.main === module) {
             http.get('/loc', function onReq(_req, _res) {
                 req = _req;
                 res = _res;
-                pyshell.send(JSON.stringify(_req.query));
+                pyshell.send(JSON.stringify(_req.query) + '\n');
             });
 
             pyshell.on('message', function (key) {
