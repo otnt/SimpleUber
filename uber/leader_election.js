@@ -91,14 +91,12 @@ if (require.main === module) {
                 pyshell.send(JSON.stringify(req.query)).end(function(err){if(err) throw err;})
                 pyshell.on('message', function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
-                  console.log(key);
-                
                   if (ringpop.handleOrProxy(key, req, res)) {
-                      console.log('Ringpop ' + ringpop.whoami() + ' handled ' + key);
+                      console.log('Ringpop ' + ringpop.whoami() + ' handled request %o', req.params);
                       res.end();
                   } else {
                       console.log('Ringpop ' + ringpop.whoami() +
-                          ' forwarded ' + key);
+                          ' forwarded request %o', req.params);
                   }
                 });
             });
