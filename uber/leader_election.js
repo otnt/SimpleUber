@@ -23,6 +23,8 @@ var Cluster = require('./cluster.js');
 var logger = require('winston');
 var parseArgs = require('./parse_args.js');
 var express = require('express');
+var PythonShell = require('python-shell');
+
 
 var LEADER_KEY = 'LEADER';
 
@@ -76,13 +78,21 @@ if (require.main === module) {
         // These HTTP servers will act as the front-end
         // for the Ringpop cluster.
         ringpops.forEach(function each(ringpop, index) {
+            var pyshell = new PythonShell('get_id.py');
             var http = express();
-
+    
             // Define a single HTTP endpoint that 'handles' or forwards
-            http.get('/objects/:id', function onReq(req, res) {
-                var key = req.params.id;
+            http.get('/loc/', function onReq(req, res) {
+                var lat = req.params.lat;
+                var log = req.params.log;
+                
                 if (ringpop.handleOrProxy(key, req, res)) {
-                    console.log('Ringpop ' + ringpop.whoami() + ' handled ' + key);
+                    pyshell.send({'lat':lat, 'log':log});
+                    pyshell.on('message', function (message) {
+                      // received a message sent from the Python script (a simple "print" statement)
+                      console.log('Ringpop ' + ringpop.whoami() + ' handled ' + key);
+                      console.log(message);
+                    });
                     res.end();
                 } else {
                     console.log('Ringpop ' + ringpop.whoami() +
