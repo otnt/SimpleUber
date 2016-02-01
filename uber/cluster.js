@@ -56,6 +56,8 @@ Cluster.prototype.launch = function launch(callback) {
         callback(err, ringpops);
     });
 
+    console.log(self.bootstrapNodes);
+
     for (var index = 0; index < this.size; index++) {
         var tchannel = new TChannel();
         var ringpop = new Ringpop({
