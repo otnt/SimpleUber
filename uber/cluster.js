@@ -109,6 +109,7 @@ function after(count, callback) {
 // your own application logic.
 function forwardedCallback(ringpop) {
     return function onRequest(req, res) {
+        var key = req.params.id;
         console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ' + key);
         res.end();
     }
