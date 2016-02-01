@@ -25,4 +25,4 @@ def get_id(latitude, longitude, min_level, max_level):
 if __name__ == '__main__':
   for line in sys.stdin:
     latlog = json.loads(line)
-    print get_id(latlog['lat'], latlog['log'], 12, 12) 
+    print get_id(float(latlog['lat']), float(latlog['log']), 12, 12) 

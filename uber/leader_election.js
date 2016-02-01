@@ -86,12 +86,9 @@ if (require.main === module) {
     
             // Define a single HTTP endpoint that 'handles' or forwards
             http.get('/loc', function onReq(req, res) {
-                console.log(req.query);
                 var lat = req.query.lat;
                 var log = req.query.log;
-                var latlog = {'lat':lat, 'log':log};
-                console.log("send " + JSON.stringify(latlog));
-                pyshell.send().end(function(err){if(err) throw err;})
+                pyshell.send(req.query).end(function(err){if(err) throw err;})
                 pyshell.on('message', function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
                   console.log(key);
