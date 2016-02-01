@@ -88,19 +88,19 @@ if (require.main === module) {
             http.get('/loc/', function onReq(req, res) {
                 var lat = req.params.lat;
                 var log = req.params.log;
+                pyshell.send({'lat':lat, 'log':log});
+                pyshell.on('message', function (key) {
+                  // received a message sent from the Python script (a simple "print" statement)
+                  console.log(key);
                 
-                if (ringpop.handleOrProxy(key, req, res)) {
-                    pyshell.send({'lat':lat, 'log':log});
-                    pyshell.on('message', function (message) {
-                      // received a message sent from the Python script (a simple "print" statement)
+                  if (ringpop.handleOrProxy(key, req, res)) {
                       console.log('Ringpop ' + ringpop.whoami() + ' handled ' + key);
-                      console.log(message);
-                    });
-                    res.end();
-                } else {
-                    console.log('Ringpop ' + ringpop.whoami() +
-                        ' forwarded ' + key);
-                }
+                      res.end();
+                  } else {
+                      console.log('Ringpop ' + ringpop.whoami() +
+                          ' forwarded ' + key);
+                  }
+                });
             });
 
             var port = cluster.basePort * 2 + index; // HTTP will need its own port
