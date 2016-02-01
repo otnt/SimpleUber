@@ -1,0 +1,22 @@
+site_name: TChannel Node
+repo_url: https://github.com/uber/tchannel-node
+
+pages:
+- Home: index.md
+- Guide: GUIDE.md
+- TChannel: channel.md
+- Sub Channels: sub-channels.md
+- Hyperbahn: hyperbahn.md
+- As Thrift: as-thrift.md
+- As JSON: as-json.md
+- Errors: errors.md
+- Peer to Peer: peer-to-peer.md
+- Statsd: statsd.md
+- Streaming: streaming.md
+
+theme: readthedocs
+
+markdown_extensions:
+  - toc:
+      permalink: 
+  - admonition:
