@@ -111,6 +111,9 @@ function after(count, callback) {
 function forwardedCallback(ringpop) {
     return function onRequest(req, res) {
         var url_parts = url.parse(req.url, true);
+        for(var b in url_parts.query) {
+          console.log(b);
+        }
         console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ' + url_parts.query);
         res.end();
     }
