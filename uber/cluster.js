@@ -44,9 +44,10 @@ function Cluster(opts) {
 Cluster.prototype.launch = function launch(callback) {
     var self = this;
     var ringpops = [];
-    var done = after(self.size, function onDone(err) {
-        callback(err, ringpops);
-    });
+    //var done = after(self.size, function onDone(err) {
+    //    callback(err, ringpops);
+    //});
+    var done = bootstrapCallbackBuilder(self.size)
 
     for (var i = this.basePort; i < this.basePort + this.size; i++) {
         var tchannel = new TChannel();
@@ -65,16 +66,19 @@ Cluster.prototype.launch = function launch(callback) {
         ringpops.push(ringpop);
 
         // First make sure TChannel is accepting connections.
-        tchannel.listen(i, this.host, listenCb(ringpop, i));
+        tchannel.listen(i, this.host, listenCb(ringpop, i - this.basePort));
     }
 
 
-    function listenCb(ringpop, port) {
+    function listenCb(ringpop, index) {
         // When TChannel is listening, bootstrap Ringpop. It'll
         // try to join its friends in the bootstrap list.
-        console.log('TChannel is listening on port ' + port);
+        console.log('TChannel is listening on port ' + this.basePort + index);
         return function onListen() {
-            ringpop.bootstrap(self.bootstrapNodes, done);
+          ringpop.bootstrap(self.bootstrapNodes, done(ringpop, index));
+
+          // This is how you wire up a handler for forwarded requests
+          ringpop.on('request', forwardedCallback());
         };
     }
 };
@@ -99,6 +103,27 @@ function after(count, callback) {
             callback = null;
         }
     };
+}
+
+function bootstrapCallbackBuilder(size) {
+    var bootstrapsLeft = size;
+    function bootstrapCallback(ringpop, i) {
+        return function onBootstrap(err) {
+            if (err) {
+                console.log('Error: Could not bootstrap ' + ringpop.whoami());
+                process.exit(1);
+            }
+    
+            console.log('Ringpop ' + ringpop.whoami() + ' has bootstrapped!');
+            bootstrapsLeft--;
+    
+            if (bootstrapsLeft === 0) {
+                console.log('Ringpop cluster is ready!');
+                createHttpServers();
+            }
+        };
+    }
+    return bootstrapCallback;
 }
 
 if (require.main === module) {
