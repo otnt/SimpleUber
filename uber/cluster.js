@@ -105,10 +105,10 @@ function after(count, callback) {
     };
 }
 
-function bootstrapCallbackBuilder(size, _ringpops, _basePort) {
+function bootstrapCallbackBuilder(size, _ringpops, basePort) {
     var bootstrapsLeft = size;
     var ringpops = _ringpops;
-    var basePort = _basePort;
+    var httpPort = basePort * 2;
     function bootstrapCallback(ringpop, index) {
         return function onBootstrap(err) {
             if (err) {
@@ -121,7 +121,7 @@ function bootstrapCallbackBuilder(size, _ringpops, _basePort) {
     
             if (bootstrapsLeft === 0) {
                 console.log('Ringpop cluster is ready!');
-                createHttpServers(ringpops, basePort);
+                createHttpServers(ringpops, httpPort);
             }
         };
     }
@@ -160,13 +160,7 @@ if (require.main === module) {
 
 // These HTTP servers will act as the front-end
 // for the Ringpop cluster.
-function createHttpServers(ringpops, basePort) {
-    console.log(ringpops);
-    console.log(ringpops.size);
-    ringpops.forEach(function each(ringpop, index) {
-      console.log(ringpop);
-      console.log(index);
-    })
+function createHttpServers(ringpops, httpPort) {
     ringpops.forEach(function each(ringpop, index) {
         var http = express();
 
@@ -182,7 +176,7 @@ function createHttpServers(ringpops, basePort) {
             }
         });
 
-        var port = basePort + index; // HTTP will need its own port
+        var port = httpPort + index; // HTTP will need its own port
         http.listen(port, function onListen() {
             console.log('HTTP is listening on ' + port);
         });
