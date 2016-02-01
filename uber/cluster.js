@@ -108,12 +108,26 @@ function after(count, callback) {
 // In this example, forwarded requests are immediately ended. Fill in with
 // your own application logic.
 function forwardedCallback(ringpop) {
+  /*
     return function onRequest(req, res) {
         for(var b in req) { 
           if(req.hasOwnProperty(b)) console.log(b); 
         }
         console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ' + req.params);
         res.end();
+    }
+    */
+
+    return function onRequest(req, res) {
+
+      var http = express();
+
+      // Define a single HTTP endpoint that 'handles' or forwards
+      http.get('/objects/:id', function onReq(req, res) {
+          var key = req.params.id;
+          console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ' + key);
+          res.end();
+      });
     }
 }
 
