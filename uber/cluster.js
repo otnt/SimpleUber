@@ -44,7 +44,7 @@ function Cluster(opts) {
     else  {
       for(var bs in this.bootstrapNodes) {
         console.log(bs);
-        console.log(bootstrapNodes[bs]);
+        console.log(this.bootstrapNodes[bs]);
       }
     }
 }
