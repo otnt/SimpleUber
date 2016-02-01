@@ -89,6 +89,7 @@ if (require.main === module) {
             http.get('/loc', function onReq(_req, _res) {
                 req = _req;
                 res = _res;
+                console.log("get query " + JSON.stringify(_req.query) + '\n');
                 pyshell.send(JSON.stringify(_req.query) + '\n');
             });
 
@@ -99,7 +100,7 @@ if (require.main === module) {
                   res.end();
               } else {
                   console.log('Ringpop ' + ringpop.whoami() +
-                      ' forwarded request %o', req.params);
+                      ' forwarded request %o', req.query);
               }
             });
 
