@@ -41,6 +41,11 @@ function Cluster(opts) {
             this.bootstrapNodes.push('127.0.0.1:' + (this.basePort + i));
         }
     }
+    else  {
+      for(var bs in bootstrapNodes) {
+        console.log(bs);
+      }
+    }
 }
 
 Cluster.prototype.launch = function launch(callback) {
