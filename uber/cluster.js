@@ -67,7 +67,7 @@ Cluster.prototype.launch = function launch(callback) {
 
         // First make sure TChannel is accepting connections.
         console.log('TChannel is listening on port ' + (this.basePort + index));
-        tchannel.listen(i, this.host, listenCb(ringpop, index));
+        //tchannel.listen(index, this.host, listenCb(ringpop, index));
     }
 
     function listenCb(ringpop, index) {
@@ -77,7 +77,7 @@ Cluster.prototype.launch = function launch(callback) {
           ringpop.bootstrap(self.bootstrapNodes, done(ringpop, index));
 
           // This is how you wire up a handler for forwarded requests
-          ringpop.on('request', forwardedCallback());
+          //ringpop.on('request', forwardedCallback());
         };
     }
 };
