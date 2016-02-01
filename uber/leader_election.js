@@ -71,6 +71,8 @@ if (require.main === module) {
             ringpop.on('ringChanged', app.chooseLeader.bind(app));
         });
 
+        // These HTTP servers will act as the front-end
+        // for the Ringpop cluster.
         ringpops.forEach(function each(ringpop, index) {
             var http = express();
 
