@@ -74,7 +74,7 @@ Cluster.prototype.launch = function launch(callback) {
 
           // This is how you wire up a handler for forwarded requests
           ringpop.on('request', forwardedCallback());
-        }
+        });
     }
 
     function listenCb(ringpop, index) {
