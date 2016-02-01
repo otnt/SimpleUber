@@ -82,6 +82,7 @@ Cluster.prototype.launch = function launch(callback) {
     }
 };
 
+
 // IGNORE THIS! It's a little utility function that invokes
 // a callback after a specified number of invocations
 // of its shim.
