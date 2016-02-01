@@ -86,8 +86,7 @@ if (require.main === module) {
     
             // Define a single HTTP endpoint that 'handles' or forwards
             http.get('/loc', function onReq(req, res) {
-              console.log(req.param("lat"));
-              console.log(req.param("log"));
+                console.log(req.query);
                 var lat = req.query.lat;
                 var log = req.query.log;
                 var latlog = {'lat':lat, 'log':log};
