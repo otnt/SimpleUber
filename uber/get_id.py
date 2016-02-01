@@ -24,5 +24,6 @@ def get_id(latitude, longitude, min_level, max_level):
 
 if __name__ == '__main__':
   for line in sys.stdin:
+    print line
     latlog = json.loads(line)
     print get_id(latlog['lat'], latlog['log'], 12, 12) 
