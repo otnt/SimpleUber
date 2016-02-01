@@ -38,7 +38,7 @@ function Cluster(opts) {
         // Create the bootstrap list of nodes that'll
         // be used to seed Ringpop for its join request.
         for (var i = 0; i < this.size; i++) {
-            this.bootstrapNodes.push('127.0.0.1:' + (this.basePort + i));
+            this.bootstrapNodes.push('54.174.116.64:' + (this.basePort + i));
         }
     }
 }
