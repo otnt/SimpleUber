@@ -22,6 +22,7 @@
 var Cluster = require('./cluster.js');
 var logger = require('winston');
 var parseArgs = require('./parse_args.js');
+var express = require('express');
 
 var LEADER_KEY = 'LEADER';
 
