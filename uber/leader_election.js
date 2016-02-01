@@ -85,13 +85,12 @@ if (require.main === module) {
     
             // Define a single HTTP endpoint that 'handles' or forwards
             http.get('/loc', function onReq(req, res) {
-                console.log("get query " + JSON.stringify(req.query) + '\n');
                 var pyshell = new PythonShell('get_id.py');
                 pyshell.send(JSON.stringify(req.query)).end();
                 pyshell.on('message', function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
                   if (ringpop.handleOrProxy(key, req, res)) {
-                      console.log('Ringpop ' + ringpop.whoami() + ' handled request %o', req.params);
+                      console.log('Ringpop ' + ringpop.whoami() + ' handled request %o', req.query);
                       res.end();
                   } else {
                       console.log('Ringpop ' + ringpop.whoami() +
