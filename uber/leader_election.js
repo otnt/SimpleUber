@@ -82,7 +82,6 @@ if (require.main === module) {
         // for the Ringpop cluster.
         ringpops.forEach(function each(ringpop, index) {
             var http = express();
-            var pyshell = new PythonShell('get_id.py');
             var req, res;
     
             // Define a single HTTP endpoint that 'handles' or forwards
@@ -90,7 +89,8 @@ if (require.main === module) {
                 req = _req;
                 res = _res;
                 console.log("get query " + JSON.stringify(_req.query) + '\n');
-                pyshell.send(JSON.stringify(_req.query) + '\n');
+                var pyshell = new PythonShell('get_id.py');
+                pyshell.send(JSON.stringify(_req.query) + '\n').end();
                 pyshell.on('message', function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
                   if (ringpop.handleOrProxy(key, req, res)) {
