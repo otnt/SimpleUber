@@ -78,7 +78,7 @@ if (require.main === module) {
         // These HTTP servers will act as the front-end
         // for the Ringpop cluster.
         ringpops.forEach(function each(ringpop, index) {
-            var pyshell = new PythonShell('../../../uber/get_id.py');
+            var pyshell = new PythonShell('/home/ec2-user/SimpleUber/uber/get_id.py');
             var http = express();
     
             // Define a single HTTP endpoint that 'handles' or forwards
