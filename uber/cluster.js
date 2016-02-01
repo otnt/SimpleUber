@@ -110,7 +110,7 @@ function after(count, callback) {
 function forwardedCallback(ringpop) {
     return function onRequest(req, res) {
         //var key = req.params.id;
-        console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ' + req);
+        console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ' + req.params);
         res.end();
     }
 }
