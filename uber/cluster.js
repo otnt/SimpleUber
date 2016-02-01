@@ -49,11 +49,11 @@ Cluster.prototype.launch = function launch(callback) {
     //});
     var done = bootstrapCallbackBuilder(self.size)
 
-    for (var i = this.basePort; i < this.basePort + this.size; i++) {
+    for (var index = 0; index < this.size; index++) {
         var tchannel = new TChannel();
         var ringpop = new Ringpop({
             app: this.name,
-            hostPort: this.host + ':' + i,
+            hostPort: this.host + ':' + (index + this.basePort),
             channel: tchannel.makeSubChannel({
                 serviceName: 'ringpop',
                 trace: false
@@ -66,14 +66,13 @@ Cluster.prototype.launch = function launch(callback) {
         ringpops.push(ringpop);
 
         // First make sure TChannel is accepting connections.
-        tchannel.listen(i, this.host, listenCb(ringpop, i - this.basePort));
+        console.log('TChannel is listening on port ' + (this.basePort + index));
+        tchannel.listen(i, this.host, listenCb(ringpop, index));
     }
-
 
     function listenCb(ringpop, index) {
         // When TChannel is listening, bootstrap Ringpop. It'll
         // try to join its friends in the bootstrap list.
-        console.log('TChannel is listening on port ' + this.basePort + index);
         return function onListen() {
           ringpop.bootstrap(self.bootstrapNodes, done(ringpop, index));
 
@@ -124,6 +123,15 @@ function bootstrapCallbackBuilder(size) {
         };
     }
     return bootstrapCallback;
+}
+
+// In this example, forwarded requests are immediately ended. Fill in with
+// your own application logic.
+function forwardedCallback() {
+    return function onRequest(req, res) {
+        console.log('Ringpop handled forwarded ');
+        res.end();
+    }
 }
 
 if (require.main === module) {
