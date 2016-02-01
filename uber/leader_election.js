@@ -88,7 +88,7 @@ if (require.main === module) {
             http.get('/loc', function onReq(req, res) {
                 var lat = req.query.lat;
                 var log = req.query.log;
-                pyshell.send(req.query).end(function(err){if(err) throw err;})
+                pyshell.send(JSON.stringify(req.query)).end(function(err){if(err) throw err;})
                 pyshell.on('message', function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
                   console.log(key);
