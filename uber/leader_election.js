@@ -79,7 +79,6 @@ if (require.main === module) {
 
             // Define a single HTTP endpoint that 'handles' or forwards
             http.get('/objects/:id', function onReq(req, res) {
-              console.log("get req " + req.params);
                 var key = req.params.id;
                 if (ringpop.handleOrProxy(key, req, res)) {
                     console.log('Ringpop ' + ringpop.whoami() + ' handled ' + key);
