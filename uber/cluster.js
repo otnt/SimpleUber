@@ -113,7 +113,7 @@ function after(count, callback) {
 // your own application logic.
 function forwardedCallback(ringpop) {
     return function onRequest(req, res) {
-        console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded %o', req.body);
+        console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ', req.url);
         res.end();
     }
 }
