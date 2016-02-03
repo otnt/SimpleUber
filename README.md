@@ -12,7 +12,7 @@ Build a simple version of Uber's backend architecture.
 5.add three nodes into cluster `node uber/simple_uber.js -n le -s 3 -p 3003 -b '["127.0.0.1:3000"]'` (known bug: could not add into cluster that is runnign on different ip address)
 
 # Tentative Architecture
-![Simple Uber Architecture](https://drive.google.com/file/d/0B0ieDBeMQ05EMWM4X2VxTmJRTlE/view?usp=sharing)
+Simple Uber Architecture
 https://drive.google.com/file/d/0B0ieDBeMQ05EMWM4X2VxTmJRTlE/view?usp=sharing
 
 # Next Step
