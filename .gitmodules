@@ -4,3 +4,6 @@
 [submodule "ringpop-node"]
 	path = ringpop-node
 	url = https://github.com/uber/ringpop-node.git
+[submodule "python-shell"]
+	path = python-shell
+	url = https://github.com/extrabacon/python-shell.git
