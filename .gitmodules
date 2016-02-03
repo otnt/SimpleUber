@@ -1,3 +1,6 @@
 [submodule "s2-geometry-library"]
 	path = s2-geometry-library
 	url = https://github.com/micolous/s2-geometry-library.git
+[submodule "ringpop-node"]
+	path = ringpop-node
+	url = https://github.com/uber/ringpop-node.git
