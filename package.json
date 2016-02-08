@@ -6,7 +6,9 @@
   },
   "dependencies": {
     "ringpop": "^10.13.5",
-    "python-shell": "^0.3.0"
+    "python-shell": "^0.3.0",
+    "tchannel": "^3.6.12",
+    "express": "^4.13.3"
   },
   "repository": {
     "type": "git",

@@ -20,7 +20,7 @@
 'use strict';
 
 var express = require('express');
-var Ringpop = require('../index.js');
+var Ringpop = require('../node_modules/ringpop/index.js');
 var TChannel = require('tchannel');
 var url = require('url');
 
