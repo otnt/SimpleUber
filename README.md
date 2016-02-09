@@ -1,15 +1,21 @@
-# Simple Uber
-Build a simple version of Uber's backend architecture.
+## Simple Uber
+This is an educational project to show a simple Uber backend architecture.
 
+## Install
 1.`clone` from master
 
 2.`npm install` to install all dependencies
 
 3.`git submodule update --init` to install [s2-geometry-library](https://github.com/micolous/s2-geometry-library/tree/b42d582e0d3986c44d18bc04dd074e6546181aa7)
 
-4.run three nodes on local address `node simpleuber/simple_uber.js -n geo_sharding -s 3`
+## Run
+1.`node simpleuber/simple_uber.js -n geo_sharding -s 3` to run three nodes on local address 
 
-5.add three nodes into cluster `node simpleuber/simple_uber.js -n geo_sharding2 -s 3 -p 3003 -b '["127.0.0.1:3000"]'` (known bug: could not add into cluster that is runnign on different ip address)
+2.`node simpleuber/simple_uber.js -n geo_sharding2 -s 3 -p 3003 -b '["127.0.0.1:3000"]'` to add three nodes into cluster (known bug: could not add into cluster that is runnign on different ip address)
+
+3.`curl -X GET '127.0.0.1:3000/loc?lat=10&log=20'` to test geo-based sharding
+
+4.`curl -X GET '127.0.0.1:3000/loc?lat=10&log=22'` to test another geo-based sharding
 
 # Tentative Architecture
 Simple Uber Architecture
@@ -26,7 +32,7 @@ In near future, I'm going to...
 
 4. Use Kafka as streaming information provider and gatherer.
 
-# Uber Backend
+# Reference
 To know more about uber's backend architecture, checkout this [tech talk](http://basho.com/posts/technical/ubers-ringpop-and-riak/).
 
 Here are some good references for...
