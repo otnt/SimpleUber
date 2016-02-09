@@ -22,6 +22,7 @@ You should get this `Ringpop 127.0.0.1:3000 handled direct request  { lat: '10',
 You should get this `Ringpop 127.0.0.1:3001 handled forward request  { lat: '10', log: '22' }  in cell 1236947351432593408`
 
 # Tentative Architecture
+![Uber Architecture](/img/uber_backend_architecture.png "Uber Architecture")
 [[https://github.com/otnt/SimpleUber/blob/master/img/uber_backend_architecture.png|alt=Uber Architecture]]
 
 # Next Step
