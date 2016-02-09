@@ -2,7 +2,7 @@
 This is an educational project to show a simple Uber backend architecture.
 
 ## Install
-1.`clone` from master
+1.`git clone` from master
 
 2.`npm install` to install all dependencies
 
@@ -13,9 +13,13 @@ This is an educational project to show a simple Uber backend architecture.
 
 2.`node simpleuber/simple_uber.js -n geo_sharding2 -s 3 -p 3003 -b '["127.0.0.1:3000"]'` to add three nodes into cluster (known bug: could not add into cluster that is runnign on different ip address)
 
-3.`curl -X GET '127.0.0.1:3000/loc?lat=10&log=20'` to test geo-based sharding
+3.`curl -X GET '127.0.0.1:6000/loc?lat=10&log=20'` to test geo-based sharding
 
-4.`curl -X GET '127.0.0.1:3000/loc?lat=10&log=22'` to test another geo-based sharding
+You should get this `Ringpop 127.0.0.1:3000 handled direct request  { lat: '10', log: '20' }  in cell 1236273900560580608`
+
+4.`curl -X GET '127.0.0.1:6000/loc?lat=10&log=22'` to test another geo-based sharding
+
+You should get this `Ringpop 127.0.0.1:3001 handled forward request  { lat: '10', log: '22' }  in cell 1236947351432593408`
 
 # Tentative Architecture
 Simple Uber Architecture
