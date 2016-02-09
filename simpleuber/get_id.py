@@ -10,6 +10,7 @@
 #both latitude and longitude are zero it will return four cellids. [maybe a bug]
 
 import sys
+import json
 from s2 import *
 
 def get_id(latitude, longitude, min_level, max_level):

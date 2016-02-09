@@ -23,11 +23,7 @@ var Cluster = require('./cluster.js');
 var logger = require('winston');
 var parseArgs = require('./parse_args.js');
 var express = require('express');
-var PythonShell = require('python-shell');
-PythonShell.defaultOptions = {
-  scriptPath: './uber'
-};
-
+var s2 = require('./s2_node.js');
 
 var LEADER_KEY = 'LEADER';
 
@@ -85,16 +81,15 @@ if (require.main === module) {
     
             // Define a single HTTP endpoint that 'handles' or forwards
             http.get('/loc', function onReq(req, res) {
-                var pyshell = new PythonShell('get_id.py');
-                pyshell.send(JSON.stringify(req.query)).end();
-                pyshell.on('message', function (key) {
+                s2.send(JSON.stringify(req.query));
+                s2.whenGetId(function (key) {
                   // received a message sent from the Python script (a simple "print" statement)
+                  req.key = key;
                   if (ringpop.handleOrProxy(key, req, res)) {
-                      console.log('Ringpop ' + ringpop.whoami() + ' handled request ', req.query);
+                      console.log('Ringpop ' + ringpop.whoami() + 
+                          ' handled direct request ', req.query, 
+                          " in cell " + key);
                       res.end();
-                  } else {
-                      console.log('Ringpop ' + ringpop.whoami() +
-                          ' forwarded request ', req.query);
                   }
                 });
             });

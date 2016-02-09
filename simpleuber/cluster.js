@@ -23,6 +23,7 @@ var express = require('express');
 var Ringpop = require('../node_modules/ringpop/index.js');
 var TChannel = require('tchannel');
 var url = require('url');
+var s2 = require('./s2_node.js');
 
 function Cluster(opts) {
     opts = opts || {};
@@ -114,8 +115,13 @@ function after(count, callback) {
 function forwardedCallback(ringpop) {
     return function onRequest(req, res) {
         var url_parts = url.parse(req.url, true);
-        console.log('Ringpop ' + ringpop.whoami() + ' handled forwarded ', url_parts.query);
-        res.end();
+        s2.send(JSON.stringify(url_parts.query));
+        s2.whenGetId(function (key) {
+          // received a message sent from the Python script (a simple "print" statement)
+          console.log('Ringpop ' + ringpop.whoami() + ' handled forward request ',
+                      url_parts.query, " in cell " + key);
+          res.end();
+        });
     }
 }
 
