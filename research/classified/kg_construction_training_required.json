@@ -1,5 +1,19 @@
 [
   {
+    "title": "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling",
+    "authors": "Sydney Anuyah, Mehedi Mahmud Kaushik, Sri Rama Krishna Reddy Dwarampudi",
+    "venue": "EMNLP 2025",
+    "year": "2025",
+    "arxiv_id": "2509.17289",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-main.783.pdf",
+    "abstract": "CoDe-KG is an open-source, end-to-end pipeline for extracting sentence-level knowledge graphs by combining robust coreference resolution with syntactic sentence decomposition. On relation extraction (RE), the pipeline achieves 65.8% macro-F1 on REBEL, an 8-point gain over the prior state of the art, and 75.7% micro-F1 on WebNLG2, while matching or exceeding performance on Wiki-NRE and CaRB. The authors contributed a training corpus of 7248 rows for sentence complexity, 200 rows of gold human annotations for coreference resolution using lung-cancer abstracts from PubMed, 900 rows of gold human annotations for sentence conversion policies, and 398 triples of gold human annotations. Additionally, the model generates a dataset of over 150,000 knowledge triples, which is open source.",
+    "source_lists": [
+      "kg_construction"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  },
+  {
     "title": "Can LLMs be Good Graph Judge for Knowledge Graph Construction?",
     "authors": "Haoyu Huang, Chong Chen, Conghui He",
     "venue": "EMNLP 2025",
@@ -14,6 +28,20 @@
     "training_type": "training_required"
   },
   {
+    "title": "HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature",
+    "authors": "Devvrat Joshi, Islem Rekik",
+    "venue": "arXiv preprint",
+    "year": "2026",
+    "arxiv_id": "2603.23136",
+    "pdf_url": "https://arxiv.org/pdf/2603.23136",
+    "abstract": "Automated knowledge graph construction is essential for navigating rapidly expanding scientific literature, but existing approaches struggle to recognize long multi-word entities, often fail to generalize across domains, and typically overlook the hierarchical nature of scientific knowledge. HGNet operates in two stages: Stage one employs Z-NERD, a zero-shot recognizer that ensures robust domain generalization via Orthogonal Semantic Decomposition (OSD) and captures complex entities with a Multi-Scale TCQK attention mechanism. Stage two applies HGNet (Hierarchy Graph Network), which builds a latent probabilistic graph, preserves hierarchical dependencies through specialized message-passing, and enforces structural integrity via Differentiable Hierarchy Loss and Continuum Abstraction Field (CAF) Loss. The framework establishes state-of-the-art results on benchmarks such as SciERC, SciER, and SPHERE, improving NER by 8.08% and relation extraction by 5.99%. In zero-shot settings, gains are even more pronounced with improvements of 10.76% for NER and 26.2% for RE. The authors contributed SPHERE, a large-scale, multi-domain benchmark for rigorous evaluation.",
+    "source_lists": [
+      "kg_construction"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  },
+  {
     "title": "Hyper-KGGen: A Skill-Driven Knowledge Extractor for High-Quality Knowledge Hypergraph Generation",
     "authors": "Rizhuo Huang, et al.",
     "venue": "arXiv preprint",
@@ -21,6 +49,34 @@
     "arxiv_id": "2602.19543",
     "pdf_url": "https://arxiv.org/pdf/2602.19543",
     "abstract": "Hyper-KGGen is a novel skill-driven framework designed for high-quality knowledge hypergraph generation. The framework addresses knowledge hypergraph generation through three main mechanisms: (1) Coarse-to-Fine Extraction: It introduces a mechanism that initially establishes a skeletal graph of entities and binary relations, then progressively enriches it with spatiotemporal details to form complex n-ary hyperedges, realizing full-dimensional knowledge modeling; (2) Adaptive Skill Acquisition: To overcome the scenario gap, the framework proposes an adaptive skill acquisition mechanism that actively distills high-quality extraction skills from the model's own execution history, evolving a Global Skill Library; (3) Stability-based Reward Strategy: Extraction stability serves as a relative reward signal to induce high-quality skills from unstable traces and missed predictions. The paper also presents HyperDocRED, a rigorously annotated benchmark for document-level knowledge hypergraph extraction.",
+    "source_lists": [
+      "kg_construction"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  },
+  {
+    "title": "GLiNER2: Schema-Driven Multi-Task Learning for Structured Information Extraction",
+    "authors": "Urchade Zaratiana, Gil Pasternak, Oliver Boyd",
+    "venue": "EMNLP 2025 (System Demonstrations)",
+    "year": "2025",
+    "arxiv_id": "2507.18546",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-demos.10.pdf",
+    "abstract": "GLiNER2 is a unified framework that enhances the original GLiNER architecture to support named entity recognition, text classification, and hierarchical structured data extraction within a single efficient model. Built on a fine-tuned encoder architecture, GLiNER2 maintains CPU efficiency and compact size while introducing multi-task composition through an intuitive schema-based interface. Experiments demonstrate competitive performance across diverse IE tasks with substantial improvements in deployment accessibility compared to LLM-based alternatives. GLiNER2 is released as an open-source library available through pip, complete with pre-trained models and comprehensive documentation.",
+    "source_lists": [
+      "kg_construction"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Nested Named Entity Recognition as Single-Pass Sequence Labeling",
+    "authors": "Munoz-Ortiz et al.",
+    "venue": "EMNLP 2025 Findings",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.findings-emnlp.530/",
+    "abstract": "The paper casts nested NER as a sequence labeling task by leveraging linearization of constituency structures, reducing complexity to token classification. The method enables a single-pass approach to nested entity extraction, important for high-quality KG construction where complex multi-word entities matter. The approach achieves competitive results on standard nested NER benchmarks while offering substantially improved efficiency over multi-pass and span-based alternatives. The work has direct relevance to knowledge graph entity extraction pipelines.",
     "source_lists": [
       "kg_construction"
     ],

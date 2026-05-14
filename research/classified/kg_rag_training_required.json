@@ -1,5 +1,34 @@
 [
   {
+    "title": "Simple Is Effective: The Roles of Graphs and Large Language Models in Knowledge-Graph-Based Retrieval-Augmented Generation",
+    "authors": "Mufei Li, Siqi Miao, Pan Li",
+    "venue": "ICLR",
+    "year": "2025",
+    "arxiv_id": "2410.20724",
+    "pdf_url": "https://arxiv.org/pdf/2410.20724",
+    "abstract": "Large Language Models (LLMs) demonstrate strong reasoning abilities but face limitations such as hallucinations and outdated knowledge. Knowledge Graph (KG)-based Retrieval-Augmented Generation (RAG) addresses these issues by grounding LLM outputs in structured external knowledge from KGs. However, current KG-based RAG frameworks still struggle to optimize the trade-off between retrieval effectiveness and efficiency in identifying a suitable amount of relevant graph information for the LLM to digest. We introduce SubgraphRAG, extending the KG-based RAG framework that retrieves subgraphs and leverages LLMs for reasoning and answer prediction. Our approach innovatively integrates a lightweight multilayer perceptron with a parallel triple-scoring mechanism for efficient and flexible subgraph retrieval while encoding directional structural distances to enhance retrieval effectiveness. The size of retrieved subgraphs can be flexibly adjusted to match the query's need and the downstream LLM's capabilities. This design strikes a balance between model complexity and reasoning power, enabling scalable and generalizable retrieval processes. Notably, based on our retrieved subgraphs, smaller LLMs like Llama3.1-8B-Instruct deliver competitive results with explainable reasoning, while larger models like GPT-4o achieve state-of-the-art accuracy compared with previous baselines -- all without fine-tuning. Extensive evaluations on the WebQSP and CWQ benchmarks highlight SubgraphRAG's strengths in efficiency, accuracy, and reliability by reducing hallucinations and improving response grounding.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models",
+    "authors": "Linhao Luo, Zicheng Zhao, Gholamreza Haffari",
+    "venue": "ICML",
+    "year": "2025",
+    "arxiv_id": "2410.13080",
+    "pdf_url": "https://arxiv.org/pdf/2410.13080",
+    "abstract": "Large language models (LLMs) have demonstrated impressive reasoning abilities, but they still struggle with faithful reasoning due to knowledge gaps and hallucinations. To address these issues, knowledge graphs (KGs) have been utilized to enhance LLM reasoning through their structured knowledge. However, existing KG-enhanced methods, either retrieval-based or agent-based, encounter difficulties in accurately retrieving knowledge and efficiently traversing KGs at scale. In this work, we introduce graph-constrained reasoning (GCR), a novel framework that bridges structured knowledge in KGs with unstructured reasoning in LLMs. To eliminate hallucinations, GCR ensures faithful KG-grounded reasoning by integrating KG structure into the LLM decoding process through KG-Trie, a trie-based index that encodes KG reasoning paths. KG-Trie constrains the decoding process, allowing LLMs to directly reason on graphs and generate faithful reasoning paths grounded in KGs. Additionally, GCR leverages a lightweight KG-specialized LLM for graph-constrained reasoning alongside a powerful general LLM for inductive reasoning over multiple reasoning paths, resulting in accurate reasoning with zero reasoning hallucination. Extensive experiments on several KGQA benchmarks demonstrate that GCR achieves state-of-the-art performance and exhibits strong zero-shot generalizability to unseen KGs without additional training.",
+    "source_lists": [
+      "kg_agent",
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
     "title": "GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation",
     "authors": "Linhao Luo, Zicheng Zhao, Gholamreza Haffari",
     "venue": "NeurIPS",
@@ -9,21 +38,6 @@
     "abstract": "Retrieval-augmented generation (RAG) has proven effective in integrating knowledge into large language models (LLMs). However, conventional RAGs struggle to capture complex relationships between pieces of knowledge, limiting their performance in intricate reasoning that requires integrating knowledge from multiple sources. Recently, graph-enhanced retrieval augmented generation (GraphRAG) builds graph structure to explicitly model these relationships, enabling more effective and efficient retrievers. Nevertheless, its performance is still hindered by the noise and incompleteness within the graph structure. To address this, we introduce GFM-RAG, a novel graph foundation model (GFM) for retrieval augmented generation. GFM-RAG is powered by an innovative graph neural network that reasons over graph structure to capture complex query-knowledge relationships. The GFM with 8M parameters undergoes a two-stage training process on large-scale datasets, comprising 60 knowledge graphs with over 14M triples and 700k documents. This results in impressive performance and generalizability for GFM-RAG, making it the first graph foundation model applicable to unseen datasets for retrieval without any fine-tuning required. Extensive experiments on three multi-hop QA datasets and seven domain-specific RAG datasets demonstrate that GFM-RAG achieves state-of-the-art performance while maintaining efficiency and alignment with neural scaling laws, highlighting its potential for further improvement.",
     "source_lists": [
       "graph_memory",
-      "kg_agent",
-      "kg_rag"
-    ],
-    "category": "kg_rag",
-    "training_type": "training_required"
-  },
-  {
-    "title": "ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG",
-    "authors": "Yifan Hu, Wei Wang, Kun Wang",
-    "venue": "NeurIPS",
-    "year": "2025",
-    "arxiv_id": "2510.13193",
-    "pdf_url": "https://arxiv.org/pdf/2510.13193",
-    "abstract": "Knowledge graphs (KGs), with their structured representation capabilities, offer a promising avenue for enhancing Retrieval Augmented Generation (RAG) systems, leading to the development of KG-RAG systems. Nevertheless, existing methods often struggle to achieve effective synergy between system effectiveness and cost efficiency, leading to neither unsatisfying performance nor excessive LLM prompt tokens and inference time. To this end, this paper proposes REMINDRAG, which employs an LLM-guided graph traversal featuring node exploration, node exploitation, and, most notably, memory replay, to improve both system effectiveness and cost efficiency. Specifically, REMINDRAG memorizes traversal experience within KG edge embeddings, mirroring the way LLMs 'memorize' world knowledge within their parameters, but in a train-free manner. We theoretically and experimentally confirm the effectiveness of REMINDRAG, demonstrating its superiority over existing baselines across various benchmark datasets. ReMindRAG achieves performance gains of 5% to 10% while simultaneously reducing the average cost per query by approximately 50%.",
-    "source_lists": [
       "kg_agent",
       "kg_rag"
     ],
@@ -47,13 +61,99 @@
     "training_type": "training_required"
   },
   {
-    "title": "Personalizing Large Language Models using Retrieval Augmented Generation and Knowledge Graph",
-    "authors": "Deeksha Prahlad, Chanhee Lee, Dongha Kim",
-    "venue": "WWW Companion",
+    "title": "GRAG: Graph Retrieval-Augmented Generation",
+    "authors": "Yuntong Hu, Zhihan Lei, Zheng Zhang",
+    "venue": "NAACL Findings",
     "year": "2025",
-    "arxiv_id": "2505.09945",
-    "pdf_url": "https://arxiv.org/pdf/2505.09945",
-    "abstract": "Large language models (LLMs) have enabled numerous applications including chatbots and conversational assistants, but being trained on vast amounts of data, LLMs often undergo high levels of over-fitting resulting in hallucinations in output generation. One of the root causes of such problems is the lack of timely, factual, and personalized information fed to the LLM. In this paper, we propose an approach to address these problems by introducing retrieval augmented generation (RAG) using knowledge graphs (KGs) to assist the LLM in personalized response generation tailored to the users. KGs have the advantage of storing continuously updated factual information in a structured way. While our KGs can be used for a variety of frequently updated personal data, such as calendar, contact, and location data, we focus on calendar data in this paper. Our approach stores updated personal and factual information in a structured way while protecting user privacy by not sending sensitive data to cloud-based LLM providers. Experimental results show that our approach works significantly better in understanding personal information and generating accurate responses compared to the baseline LLMs using personal data as text inputs.",
+    "arxiv_id": "2405.16506",
+    "pdf_url": "https://arxiv.org/pdf/2405.16506",
+    "abstract": "Naive Retrieval-Augmented Generation (RAG) focuses on individual documents during retrieval and falls short in handling networked documents which are popular in applications such as citation graphs, social media, and knowledge graphs. To overcome this limitation, we introduce Graph Retrieval-Augmented Generation (GRAG), which tackles the fundamental challenges in retrieving textual subgraphs and integrating the joint textual and topological information into Large Language Models (LLMs) to enhance generation. To enable efficient textual subgraph retrieval, we propose a novel divide-and-conquer strategy that retrieves the optimal subgraph structure in linear time. To achieve graph context-aware generation, we incorporate textual graphs into LLMs through two complementary views-the text view and the graph view-enabling LLMs to more effectively comprehend and utilize the graph context. Extensive experiments on graph reasoning benchmarks demonstrate that in scenarios requiring multi-hop reasoning on textual graphs, our GRAG approach significantly outperforms current state-of-the-art RAG methods.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs",
+    "authors": "Costas Mavromatis, George Karypis",
+    "venue": "ACL Findings",
+    "year": "2025",
+    "arxiv_id": "2405.20139",
+    "pdf_url": "https://arxiv.org/pdf/2405.20139",
+    "abstract": "Knowledge Graphs (KGs) represent human-crafted factual knowledge in the form of triplets (head, relation, tail), which collectively form a graph. Question Answering over KGs (KGQA) is the task of answering natural questions grounding the reasoning to the information provided by the KG. Large Language Models (LLMs) are the state-of-the-art models for QA tasks due to their remarkable ability to understand natural language. On the other hand, Graph Neural Networks (GNNs) have been widely used for KGQA as they can handle the complex graph information stored in the KG. In this work, we introduce GNN-RAG, a novel method for combining language understanding abilities of LLMs with the reasoning abilities of GNNs in a retrieval-augmented generation (RAG) style. First, a GNN reasons over a dense KG subgraph to retrieve answer candidates for a given question. Second, the shortest paths in the KG that connect question entities and answer candidates are extracted to represent KG reasoning paths. The extracted paths are verbalized and given as input for LLM reasoning with RAG. In our GNN-RAG framework, the GNN acts as a dense subgraph reasoner to extract useful graph information, while the LLM leverages its natural language processing ability for ultimate KGQA. GNN-RAG achieves state-of-the-art performance in two widely used KGQA benchmarks (WebQSP and CWQ), outperforming or matching GPT-4 performance with a 7B tuned LLM.",
+    "source_lists": [
+      "kg_agent",
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "D-RAG: Differentiable Retrieval-Augmented Generation for Knowledge Graph Question Answering",
+    "authors": "Guangze Gao, Zixuan Li, Chunfeng Yuan",
+    "venue": "EMNLP",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-main.1793.pdf",
+    "abstract": "Knowledge Graph Question Answering (KGQA) aims to answer natural language questions based on knowledge graphs. Recent approaches apply the Retrieval-Augmented Generation (RAG) paradigm to incorporate Large Language Models (LLMs) to this task, where a retriever selects a question-related subgraph and an LLM-based generator is then adopted to predict answers based on the retrieved subgraph. However, the subgraph selection process is non-differentiable, preventing end-to-end training of the retriever and the generator in these approaches, which leads to sub-optimal performance. To address this, we propose D-RAG, a differentiable RAG approach that jointly optimizes the retriever and the generator. Via reformulating the optimization objective as an expectation over a subgraph distribution with respect to answer generation likelihood, D-RAG makes the joint optimization feasible. Specifically, it implements this joint optimization through a differentiable subgraph sampling and prompting module that integrates Gumbel-Softmax reparameterization for sampling and a neural prompt construction process that fuses semantic and structural information. Experimental results on WebQSP and CWQ demonstrate that D-RAG outperforms state-of-the-art approaches.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph",
+    "authors": "Tu Ao, Yanhua Yu, Yuling Wang",
+    "venue": "AAAI",
+    "year": "2025",
+    "arxiv_id": "2504.03137",
+    "pdf_url": "https://arxiv.org/pdf/2504.03137",
+    "abstract": "Large Language Models (LLMs) have impressive capabilities in text understanding and zero-shot reasoning. However, delays in knowledge updates may cause them to reason incorrectly or produce harmful results. Knowledge Graphs (KGs) provide rich and reliable contextual information for the reasoning process of LLMs by structurally organizing and connecting a wide range of entities and relations. Existing KG-based LLM reasoning methods only inject KGs' knowledge into prompts in a textual form, ignoring its structural information. Moreover, they mostly rely on close-source models or open-source models with large parameters, which poses challenges to high resource consumption. To address this, we propose a novel Lightweight and efficient Prompt learning-ReasOning Framework for KGQA (LightPROF), which leverages the full potential of LLMs to tackle complex reasoning tasks in a parameter-efficient manner. Specifically, LightPROF follows a 'Retrieve-Embed-Reason process', first accurately, and stably retrieving the corresponding reasoning graph from the KG through retrieval module. Next, through a Transformer-based Knowledge Adapter, it finely extracts and integrates factual and structural information from the KG, then maps this information to the LLM's token embedding space, creating an LLM-friendly prompt to be used by the LLM for the final reasoning. Additionally, LightPROF only requires training Knowledge Adapter and can be compatible with any open-source LLM.",
+    "source_lists": [
+      "kg_agent",
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Retrieval Augmented Generation for Dynamic Graph Modeling (RAG4DyG)",
+    "authors": "Yuxia Wu, Yuan Fang, Lizi Liao",
+    "venue": "SIGIR",
+    "year": "2025",
+    "arxiv_id": "2408.14523",
+    "pdf_url": "https://arxiv.org/pdf/2408.14523",
+    "abstract": "Modeling dynamic graphs, such as those found in social networks, recommendation systems, and e-commerce platforms, is crucial for capturing evolving relationships and delivering relevant insights over time. Traditional approaches primarily rely on graph neural networks with temporal components or sequence generation models, which often focus narrowly on the historical context of target nodes. This limitation restricts the ability to adapt to new and emerging patterns in dynamic graphs. To address this challenge, we propose a novel framework, Retrieval-Augmented Generation for Dynamic Graph modeling (RAG4DyG), which enhances dynamic graph predictions by incorporating contextually and temporally relevant examples from broader graph structures. Our approach includes a time- and context-aware contrastive learning module to identify high-quality demonstrations and a graph fusion strategy to effectively integrate these examples with historical contexts. Through extensive experimentation on various real-world datasets, RAG4DyG outperforms state-of-the-art methods in both transductive and inductive scenarios, offering improved accuracy and adaptability in dynamic graph scenarios.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "CG-RAG: Research Question Answering by Citation Graph Retrieval-Augmented LLMs",
+    "authors": "Yuntong Hu, Zhuofeng Li, Zheng Zhang",
+    "venue": "SIGIR",
+    "year": "2025",
+    "arxiv_id": "2501.15067",
+    "pdf_url": "https://arxiv.org/pdf/2501.15067",
+    "abstract": "Research question answering requires accurate retrieval and contextual understanding of scientific literature. However, current Retrieval-Augmented Generation (RAG) methods often struggle to balance complex document relationships with precise information retrieval. In this paper, we introduce Contextualized Graph Retrieval-Augmented Generation (CG-RAG), a novel framework that integrates sparse and dense retrieval signals within graph structures to enhance retrieval efficiency and subsequently improve generation quality for research question answering. First, we propose a contextual graph representation for citation graphs, effectively capturing both explicit and implicit connections within and across documents. Next, we introduce Lexical-Semantic Graph Retrieval (LeSeGR), which seamlessly integrates sparse and dense retrieval signals with graph encoding. Finally, we present a context-aware generation strategy that utilizes the retrieved graph-structured information to generate precise and contextually enriched responses using large language models (LLMs). Extensive experiments on research question answering benchmarks across multiple domains demonstrate that our CG-RAG framework significantly outperforms RAG methods combined with various state-of-the-art retrieval approaches.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "HyperG: Hypergraph-Enhanced LLMs for Structured Knowledge",
+    "authors": "Sirui Huang, Hanqian Li, Yanggan Gu",
+    "venue": "SIGIR",
+    "year": "2025",
+    "arxiv_id": "2502.18125",
+    "pdf_url": "https://arxiv.org/pdf/2502.18125",
+    "abstract": "Given that substantial amounts of domain-specific knowledge are stored in structured formats, such as web data organized through HTML, Large Language Models (LLMs) are expected to fully comprehend this structured information to broaden their applications in various real-world downstream tasks. Current approaches for applying LLMs to structured data fall into two main categories: serialization-based and operation-based methods. Both approaches, whether relying on serialization or using SQL-like operations as an intermediary, encounter difficulties in fully capturing structural relationships and effectively handling sparse data. To address these unique characteristics of structured data, we propose HyperG, a hypergraph-based generation framework aimed at enhancing LLMs' ability to process structured knowledge. Specifically, HyperG first augments sparse data with contextual information, leveraging the generative power of LLMs, and incorporates a prompt-attentive hypergraph learning (PHL) network to encode both the augmented information and the intricate structural relationships within the data.",
     "source_lists": [
       "kg_rag"
     ],
@@ -82,6 +182,20 @@
     "arxiv_id": "2507.23581",
     "pdf_url": "https://arxiv.org/pdf/2507.23581",
     "abstract": "Graph Retrieval-Augmented Generation (GraphRAG) has shown great effectiveness in enhancing the reasoning abilities of LLMs by leveraging graph structures for knowledge representation and modeling complex real-world relationships. However, existing GraphRAG methods still face significant bottlenecks when handling complex problems that require multi-hop reasoning, as their query and retrieval phases are largely based on pre-defined heuristics and do not fully utilize the reasoning potentials of LLMs. To address this problem, we propose GraphRAG-R1, an adaptive GraphRAG framework by training LLMs with process-constrained outcome-based reinforcement learning (RL) to enhance the multi-hop reasoning ability. Our method can decompose complex problems, autonomously invoke retrieval tools to acquire necessary information, and perform effective reasoning. Specifically, we utilize a modified version of Group Relative Policy Optimization (GRPO) that supports rollout-with-thinking capability, and design two novel reward signals: Progressive Retrieval Attenuation (PRA) and Cost-Aware F1 (CAF). Additionally, our framework includes a phase-dependent training strategy with three training stages, and a hybrid graph-textual retrieval to improve the reasoning capacity.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "G-reasoner: Foundation Models for Unified Reasoning over Graph-structured Knowledge",
+    "authors": "Linhao Luo, Zicheng Zhao, Reza Haffari",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2509.24276",
+    "pdf_url": "https://arxiv.org/pdf/2509.24276",
+    "abstract": "Large language models (LLMs) excel at complex reasoning but remain limited by static and incomplete parametric knowledge. Retrieval-augmented generation (RAG) mitigates this by incorporating external knowledge, yet existing RAGs struggle with knowledge-intensive tasks due to fragmented information and weak modeling of knowledge structure. Graphs offer a natural way to model relationships within knowledge, but LLMs are inherently unstructured and cannot effectively reason over graph-structured data. Recent graph-enhanced RAG (GraphRAG) attempts to bridge this gap by constructing tailored graphs and enabling LLMs to reason on them. However, these methods often depend on ad-hoc graph designs, heuristic search, or costly agent pipelines, which hinder scalability and generalization. To address these challenges, we propose G-reasoner, a unified framework that integrates graph and language foundation models for scalable reasoning over diverse graph-structured knowledge. Central to our approach is QuadGraph, a standardized four-layer abstraction that unifies heterogeneous knowledge sources into a common graph representation. Building on this, we introduce a 34M-parameter graph foundation model (GFM) that jointly captures graph topology and textual semantics, and is integrated with LLMs to enhance reasoning in downstream applications.",
     "source_lists": [
       "kg_rag"
     ],

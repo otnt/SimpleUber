@@ -40,7 +40,7 @@
       "kg_construction"
     ],
     "category": "kg_construction",
-    "training_type": "training_free"
+    "training_type": "training_required"
   },
   {
     "title": "Can LLMs be Good Graph Judge for Knowledge Graph Construction?",

@@ -14,6 +14,20 @@
     "training_type": "training_required"
   },
   {
+    "title": "From Experience to Strategy: Empowering LLM Agents with Trainable Graph Memory",
+    "authors": "Siyu Xia, Zekun Xu, Jiajun Chai, Wentian Fan, Yan Song, Xiaohan Wang, Guojun Yin, Wei Lin, Haifeng Zhang, Jun Wang",
+    "venue": "arXiv preprint (under review at ICLR 2026)",
+    "year": "2025",
+    "arxiv_id": "2511.07800",
+    "pdf_url": "https://arxiv.org/pdf/2511.07800",
+    "abstract": "Memory is increasingly recognized as a cornerstone for the long-term decision-making capabilities of LLM-based agents, with experiences playing a pivotal role in guiding current behaviors based on past interactions. However, LLMs acquire experience either through implicit memory via training, which suffers from catastrophic forgetting and limited interpretability, or explicit memory via prompting, which lacks adaptability. We introduce a novel agent-centric, trainable, multi-layered graph memory framework that abstracts raw agent trajectories into structured decision paths in a state machine, and further distills them into human-interpretable strategic meta-cognition. A reinforcement-based weight optimization procedure integrates these optimized strategies into the LLM agent's training loop through meta-cognitive prompting. Empirical results across diverse benchmarks demonstrate that our framework consistently improves agent performance, providing a scalable and interpretable approach to lifelong learning in language agents.",
+    "source_lists": [
+      "graph_memory"
+    ],
+    "category": "graph_memory",
+    "training_type": "training_required"
+  },
+  {
     "title": "MemGen: Weaving Generative Latent Memory for Self-Evolving Agents",
     "authors": "Guibin Zhang, Muxin Fu, Guancheng Wan, Kun Wang, Tianlong Chen, Shuicheng Yan",
     "venue": "arXiv preprint",
@@ -51,20 +65,6 @@
     "abstract": "Large language model (LLM) agents are constrained by limited context windows, necessitating external memory systems for long-term information understanding. Current memory-augmented agents typically depend on pre-defined instructions and tools for memory updates. However, language models may lack the ability to determine which information to store, how to structure it, and when to update it, especially as memory systems become more complex. To this end, we propose Mem-alpha, a reinforcement learning framework that trains agents to effectively manage complex memory systems through interaction and feedback. During training, agents process sequential information chunks, learn to extract and store relevant content, then update the memory system. The reward signal derives from downstream question-answering accuracy over the full interaction history, directly optimizing for memory construction. To illustrate the effectiveness of our training framework, we design a memory architecture comprising core, episodic, and semantic components, equipped with multiple tools for memory operations. Empirical evaluation demonstrates that Mem-alpha achieves significant improvements over existing memory-augmented agent baselines. Despite being trained exclusively on instances with a maximum length of 30k tokens, our agents exhibit remarkable generalization to sequences exceeding 400k tokens, over 13x the training length, highlighting the robustness of Mem-alpha.",
     "source_lists": [
       "graph_memory"
-    ],
-    "category": "graph_memory",
-    "training_type": "training_required"
-  },
-  {
-    "title": "Enhancing LLM Planning for Robotics Manipulation through Hierarchical Procedural Knowledge Graphs",
-    "authors": "Anonymous, et al.",
-    "venue": "NeurIPS",
-    "year": "2025",
-    "arxiv_id": "N/A",
-    "pdf_url": "https://openreview.net/pdf?id=8LO0vLRXpz",
-    "abstract": "Recent advances in large language models (LLMs) have shown promise as autonomous agents capable of sequential decision-making in complex environments. A core challenge for these agents is to efficiently internalize and leverage new information that emerges dynamically during their tasks. To address this challenge, we propose GraphMind, an LLM agent architecture that integrates a knowledge graph as a graph-based memory module to facilitate high-level action planning. In particular, the agent incrementally constructs the knowledge graph through environmental interactions and retrieves relevant information to formulate efficient plans. GraphMind is particularly designed for partially observable environments, which require agents to manage long-term memory and perform effective exploration under incomplete information. We evaluate GraphMind in complex navigating environments specifically designed to present long-horizon and partially observable challenges. Experimental results demonstrate that employing a knowledge graph as an external memory significantly enhances the success rate and efficiency of the LLM's planning capabilities.",
-    "source_lists": [
-      "kg_agent"
     ],
     "category": "graph_memory",
     "training_type": "training_required"

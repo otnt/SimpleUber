@@ -185,20 +185,6 @@
     "training_type": "training_free"
   },
   {
-    "title": "From Experience to Strategy: Empowering LLM Agents with Trainable Graph Memory",
-    "authors": "Siyu Xia, Zekun Xu, Jiajun Chai, Wentian Fan, Yan Song, Xiaohan Wang, Guojun Yin, Wei Lin, Haifeng Zhang, Jun Wang",
-    "venue": "arXiv preprint (under review at ICLR 2026)",
-    "year": "2025",
-    "arxiv_id": "2511.07800",
-    "pdf_url": "https://arxiv.org/pdf/2511.07800",
-    "abstract": "Memory is increasingly recognized as a cornerstone for the long-term decision-making capabilities of LLM-based agents, with experiences playing a pivotal role in guiding current behaviors based on past interactions. However, LLMs acquire experience either through implicit memory via training, which suffers from catastrophic forgetting and limited interpretability, or explicit memory via prompting, which lacks adaptability. We introduce a novel agent-centric, trainable, multi-layered graph memory framework that abstracts raw agent trajectories into structured decision paths in a state machine, and further distills them into human-interpretable strategic meta-cognition. A reinforcement-based weight optimization procedure integrates these optimized strategies into the LLM agent's training loop through meta-cognitive prompting. Empirical results across diverse benchmarks demonstrate that our framework consistently improves agent performance, providing a scalable and interpretable approach to lifelong learning in language agents.",
-    "source_lists": [
-      "graph_memory"
-    ],
-    "category": "graph_memory",
-    "training_type": "training_free"
-  },
-  {
     "title": "LongMemEval: Benchmarking Chat Assistants on Long-Term Interactive Memory",
     "authors": "Di Wu, Hongwei Wang, Wenhao Yu, Yuwei Zhang, Kai-Wei Chang, Dong Yu",
     "venue": "ICLR 2025",
@@ -304,6 +290,20 @@
     "arxiv_id": "2507.21407",
     "pdf_url": "https://arxiv.org/pdf/2507.21407",
     "abstract": "Autonomous agents based on large language models (LLMs) have demonstrated impressive capabilities in a wide range of applications, including web navigation, software development, and embodied control. While most LLMs are limited in several key agentic procedures, such as reliable planning, long-term memory, tool management, and multi-agent coordination, graphs can serve as a powerful auxiliary structure to enhance structure, continuity, and coordination in complex agent workflows. Given the rapid growth and fragmentation of research on Graph-augmented LLM Agents (GLA), this paper offers a timely and comprehensive overview of recent advances and also highlights key directions for future work. Specifically, we categorize existing GLA methods by their primary functions in LLM agent systems, including planning, memory, and tool usage, and then analyze how graphs and graph learning algorithms contribute to each. For multi-agent systems, we further discuss how GLA solutions facilitate the orchestration, efficiency optimization, and trustworthiness of MAS.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "graph_memory",
+    "training_type": "training_free"
+  },
+  {
+    "title": "Enhancing LLM Planning for Robotics Manipulation through Hierarchical Procedural Knowledge Graphs",
+    "authors": "Anonymous, et al.",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "N/A",
+    "pdf_url": "https://openreview.net/pdf?id=8LO0vLRXpz",
+    "abstract": "Recent advances in large language models (LLMs) have shown promise as autonomous agents capable of sequential decision-making in complex environments. A core challenge for these agents is to efficiently internalize and leverage new information that emerges dynamically during their tasks. To address this challenge, we propose GraphMind, an LLM agent architecture that integrates a knowledge graph as a graph-based memory module to facilitate high-level action planning. In particular, the agent incrementally constructs the knowledge graph through environmental interactions and retrieves relevant information to formulate efficient plans. GraphMind is particularly designed for partially observable environments, which require agents to manage long-term memory and perform effective exploration under incomplete information. We evaluate GraphMind in complex navigating environments specifically designed to present long-horizon and partially observable challenges. Experimental results demonstrate that employing a knowledge graph as an external memory significantly enhances the success rate and efficiency of the LLM's planning capabilities.",
     "source_lists": [
       "kg_agent"
     ],

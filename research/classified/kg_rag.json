@@ -262,7 +262,7 @@
       "kg_rag"
     ],
     "category": "kg_rag",
-    "training_type": "training_free"
+    "training_type": "training_required"
   },
   {
     "title": "SimGRAG: Leveraging Similar Subgraphs for Knowledge Graphs Driven Retrieval-Augmented Generation",
@@ -547,7 +547,7 @@
       "kg_rag"
     ],
     "category": "kg_rag",
-    "training_type": "training_free"
+    "training_type": "training_required"
   },
   {
     "title": "HyperG: Hypergraph-Enhanced LLMs for Structured Knowledge",

@@ -53,7 +53,7 @@
       "kg_agent"
     ],
     "category": "kg_agent",
-    "training_type": "training_free"
+    "training_type": "training_required"
   },
   {
     "title": "Paths-over-Graph: Knowledge Graph Empowered Large Language Model Reasoning",
