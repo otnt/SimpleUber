@@ -1,0 +1,326 @@
+[
+  {
+    "title": "KGARevion: An AI Agent for Knowledge-Intensive Biomedical QA",
+    "authors": "Xiaorui Su, Yibo Wang, Shanghua Gao, Xiaolong Liu, Valentina Giunchiglia, Djork-Arne Clevert, Marinka Zitnik",
+    "venue": "ICLR",
+    "year": "2025",
+    "arxiv_id": "2410.04660",
+    "pdf_url": "https://arxiv.org/pdf/2410.04660",
+    "abstract": "Biomedical reasoning integrates structured, codified knowledge with tacit, experience-based insights. Depending on the context, this reasoning often takes two forms: textual reasoning, which involves articulating logical steps using language; and visual reasoning, which involves interpreting visual cues. While there has been substantial work on visual reasoning, less attention has been given to interpreting non-codified, experience-based medical knowledge as part of LLM reasoning. We introduce KGARevion, a knowledge graph-based agent that answers knowledge-intensive questions. Upon receiving a query, KGARevion generates relevant triplets by leveraging the latent knowledge embedded in a large language model. It then verifies these triplets against a grounded knowledge graph, filtering out errors and retaining only accurate, contextually relevant information for the final answer. This multi-step process strengthens reasoning, adapts to different models of medical inference, and outperforms retrieval-augmented generation-based approaches that lack effective verification mechanisms. Evaluations on medical QA benchmarks show that KGARevion improves accuracy by over 5.2% over 15 models in handling complex medical queries. On three newly curated medical QA datasets, KGARevion improved accuracy by 10.4%."
+  },
+  {
+    "title": "Think-on-Graph 2.0: Deep and Faithful Large Language Model Reasoning with Knowledge-guided Retrieval Augmented Generation",
+    "authors": "Shengjie Ma, Chengjin Xu, Xuhui Jiang, Muzhi Li, Huaren Qu, Cehao Yang, Jiaxin Mao, Jian Guo",
+    "venue": "ICLR",
+    "year": "2025",
+    "arxiv_id": "2407.10805",
+    "pdf_url": "https://arxiv.org/pdf/2407.10805",
+    "abstract": "Retrieval-augmented generation (RAG) has significantly advanced large language models (LLMs) by enabling dynamic information retrieval to mitigate knowledge gaps and hallucinations in generated content. However, these systems often falter with complex reasoning and consistency across diverse queries. In this work, we present Think-on-Graph 2.0 (ToG-2), a hybrid RAG framework that iteratively retrieves information from both unstructured and structured knowledge sources in a tight-coupling manner. Specifically, ToG-2 leverages knowledge graphs (KGs) to link documents via entities, facilitating deep and knowledge-guided context retrieval. Simultaneously, it utilizes documents as entity contexts to achieve precise and efficient graph retrieval. ToG-2 alternates between graph retrieval and context retrieval to search for in-depth clues relevant to the question, enabling LLMs to generate answers. Extensive experiments demonstrate that ToG-2 achieves overall SOTA performance on 6 of 7 knowledge-intensive datasets with GPT-3.5, and can elevate the performance of smaller models like LLAMA-2-13B to the level of GPT-3.5's direct reasoning. The method is training-free and plug-and-play compatible with various LLMs."
+  },
+  {
+    "title": "FiDeLiS: Faithful Reasoning in Large Language Models for Knowledge Graph Question Answering",
+    "authors": "Yuan Sui, Yufei He, Nian Liu, Xiaoxin He, Kun Wang, Bryan Hooi",
+    "venue": "ACL Findings",
+    "year": "2025",
+    "arxiv_id": "2405.13873",
+    "pdf_url": "https://aclanthology.org/2025.findings-acl.436.pdf",
+    "abstract": "Large language models (LLMs) are often challenged by generating erroneous or hallucinated responses, especially in complex reasoning tasks. Leveraging knowledge graphs (KGs) as external knowledge sources has emerged as a viable solution. However, existing KG-enhanced methods, either retrieval-based or agent-based, encounter difficulties in accurately retrieving knowledge and efficiently traversing KGs at scale. We propose a unified framework, FiDeLiS, designed to improve the factuality of LLM responses by anchoring answers to verifiable reasoning steps retrieved from a KG. To achieve this, we leverage step-wise beam search with a deductive scoring function, allowing the LLM to validate each reasoning step and halt the search once the question is deducible. In addition, our Path-RAG module pre-selects a smaller candidate set for each beam search step, reducing computational costs by narrowing the search space. Extensive experiments show that FiDeLiS achieves new state-of-the-art performance in a training-free way."
+  },
+  {
+    "title": "Reasoning of Large Language Models over Knowledge Graphs with Super-Relations",
+    "authors": "Song Wang, Junhong Lin, Xiaojie Guo, Julian Shun, Jundong Li, Yada Zhu",
+    "venue": "ICLR",
+    "year": "2025",
+    "arxiv_id": "2503.22166",
+    "pdf_url": "https://arxiv.org/pdf/2503.22166",
+    "abstract": "While large language models (LLMs) have made significant progress in processing and reasoning over knowledge graphs, current methods suffer from a high non-retrieval rate. This limitation reduces the accuracy of answering questions based on these graphs. Our analysis reveals that the combination of greedy search and forward reasoning is a major contributor to this issue. To overcome these challenges, we introduce the concept of super-relations, which enables both forward and backward reasoning by summarizing and connecting various relational paths within the graph. This holistic approach not only expands the search space, but also significantly improves retrieval efficiency. In this paper, we propose the ReKnoS framework, which aims to Reason over Knowledge Graphs with Super-Relations. Our framework's key advantages include the inclusion of multiple relation paths through super-relations, enhanced forward and backward reasoning capabilities, and increased efficiency in querying LLMs. The proposed ReKnoS consistently outperforms state-of-the-art baselines like ToG, KG-Agent, and StructGPT across diverse real-world knowledge graph question answering datasets."
+  },
+  {
+    "title": "RuAG: Learned-rule-augmented Generation for Large Language Models",
+    "authors": "Yudi Zhang, Pei Xiao, Lu Wang, Chaoyun Zhang, Meng Fang, Yali Du, Yevgeniy Puzyrev, Randolph Yao, Si Qin, Qingwei Lin, Mykola Pechenizkiy, Dongmei Zhang, Saravan Rajmohan, Qi Zhang",
+    "venue": "ICLR",
+    "year": "2025",
+    "arxiv_id": "2411.03349",
+    "pdf_url": "https://arxiv.org/pdf/2411.03349",
+    "abstract": "In-context learning (ICL) and Retrieval-Augmented Generation (RAG) have gained attention for their ability to enhance LLMs' reasoning by incorporating external knowledge but suffer from limited contextual window size, leading to insufficient information injection. To this end, we propose a novel framework, RuAG, to automatically distill large volumes of offline data into interpretable first-order logic rules, which are injected into LLMs to boost their reasoning capabilities. Our method begins by formulating the search process relying on LLMs' commonsense, where LLMs automatically define head and body predicates. Then, RuAG applies Monte Carlo Tree Search (MCTS) to address the combinational searching space and efficiently discover logic rules from data. The resulting logic rules are translated into natural language, allowing targeted knowledge injection and seamless integration into LLM prompts for LLM's downstream task reasoning. We evaluate our framework on public and private industrial tasks, including natural language processing, time-series, decision-making, and industrial tasks, showing its effectiveness in enhancing LLM's capability over diverse tasks."
+  },
+  {
+    "title": "Graph-constrained Reasoning: Faithful Reasoning on Knowledge Graphs with Large Language Models",
+    "authors": "Linhao Luo, Zicheng Zhao, Chen Gong, Gholamreza Haffari, Shirui Pan",
+    "venue": "ICML",
+    "year": "2025",
+    "arxiv_id": "2410.13080",
+    "pdf_url": "https://arxiv.org/pdf/2410.13080",
+    "abstract": "Large language models (LLMs) have demonstrated impressive reasoning abilities, but they still struggle with faithful reasoning due to knowledge gaps and hallucinations. To address these issues, knowledge graphs (KGs) have been utilized to enhance LLM reasoning through their structured knowledge. However, existing KG-enhanced methods, either retrieval-based or agent-based, encounter difficulties in accurately retrieving knowledge and efficiently traversing KGs at scale. In this work, we introduce graph-constrained reasoning (GCR), a novel framework that bridges structured knowledge in KGs with unstructured reasoning in LLMs. To eliminate hallucinations, GCR ensures faithful KG-grounded reasoning by integrating KG structure into the LLM decoding process through KG-Trie, a trie-based index that encodes KG reasoning paths. KG-Trie constrains the decoding process, allowing LLMs to directly reason on graphs and generate faithful reasoning paths grounded in KGs. Additionally, GCR leverages a lightweight KG-specialized LLM for graph-constrained reasoning alongside a powerful general LLM for inductive reasoning over multiple reasoning paths, resulting in accurate reasoning with zero reasoning hallucination."
+  },
+  {
+    "title": "KG-Agent: An Efficient Autonomous Agent Framework for Complex Reasoning over Knowledge Graph",
+    "authors": "Jinhao Jiang, Kun Zhou, Wayne Xin Zhao, Yang Song, Chen Zhu, Hengshu Zhu, Ji-Rong Wen",
+    "venue": "ACL",
+    "year": "2025",
+    "arxiv_id": "2402.11163",
+    "pdf_url": "https://aclanthology.org/2025.acl-long.468.pdf",
+    "abstract": "In this paper, we aim to improve the reasoning ability of large language models (LLMs) over knowledge graphs (KGs) to answer complex questions. Inspired by existing methods that design the interaction strategy between LLMs and KG, we propose an autonomous LLM-based agent framework, called KG-Agent, which enables a small LLM to actively make decisions until finishing the reasoning process over KGs. In KG-Agent, we integrate the LLM, multifunctional toolbox, KG-based executor, and knowledge memory, and develop an iteration mechanism that autonomously selects the tool then updates the memory for reasoning over KG. To guarantee the effectiveness, we leverage program language to formulate the multi-hop reasoning process over the KG, and synthesize a code-based instruction dataset to fine-tune the base LLM. Extensive experiments demonstrate that only using 10K samples for tuning LLaMA2-7B can outperform competitive methods using larger LLMs or more data, on both in-domain and out-domain datasets."
+  },
+  {
+    "title": "KnowAgent: Knowledge-Augmented Planning for LLM-Based Agents",
+    "authors": "Yuqi Zhu, Shuofei Qiao, Yixin Ou, Shumin Deng, Shiwei Lyu, Yue Shen, Lei Liang, Jinjie Gu, Huajun Chen, Ningyu Zhang",
+    "venue": "NAACL Findings",
+    "year": "2025",
+    "arxiv_id": "2403.03101",
+    "pdf_url": "https://aclanthology.org/2025.findings-naacl.205.pdf",
+    "abstract": "Large Language Models (LLMs) have demonstrated great potential in complex reasoning tasks, yet they fall short when tackling more sophisticated challenges, especially when interacting with environments through generating executable actions. This inadequacy primarily stems from the lack of built-in action knowledge in language agents, which fails to effectively guide the planning trajectories during task solving and results in planning hallucination. To address this issue, we introduce KnowAgent, a novel approach designed to enhance the planning capabilities of LLMs by incorporating explicit action knowledge. Specifically, KnowAgent employs an action knowledge base and a knowledgeable self-learning strategy to constrain the action path during planning, enabling more reasonable trajectory synthesis, and thereby enhancing the planning performance of language agents. Experimental results on HotpotQA and ALFWorld based on various backbone models demonstrate that KnowAgent can achieve comparable or superior performance to existing baselines. Further analysis indicates the effectiveness of KnowAgent in terms of planning hallucinations mitigation."
+  },
+  {
+    "title": "KARMA: Leveraging Multi-Agent LLMs for Automated Knowledge Graph Enrichment",
+    "authors": "Yuxing Lu, Jinzhuo Wang",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "2502.06472",
+    "pdf_url": "https://arxiv.org/pdf/2502.06472",
+    "abstract": "Maintaining comprehensive and up-to-date knowledge graphs (KGs) is critical for modern AI systems, but manual curation struggles to scale with the rapid growth of scientific literature. This paper presents KARMA, a novel framework employing multi-agent large language models (LLMs) to automate KG enrichment through structured analysis of unstructured text. Our approach employs nine collaborative agents, spanning entity discovery, relation extraction, schema alignment, and conflict resolution that iteratively parse documents, verify extracted knowledge, and integrate it into existing graph structures while adhering to domain-specific schema. Experiments on 1,200 PubMed articles from three different domains demonstrate the effectiveness of KARMA in knowledge graph enrichment, with the identification of up to 38,230 new entities while achieving 83.1% LLM-verified correctness and reducing conflict edges by 18.6% through multi-layer assessments."
+  },
+  {
+    "title": "Zep: A Temporal Knowledge Graph Architecture for Agent Memory",
+    "authors": "Preston Rasmussen, Pavlo Paliychuk, Travis Beauvais, Jack Ryan, Daniel Chalef",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2501.13956",
+    "pdf_url": "https://arxiv.org/pdf/2501.13956",
+    "abstract": "We introduce Zep, a novel memory layer service for AI agents that outperforms the current state-of-the-art system, MemGPT, in the Deep Memory Retrieval (DMR) benchmark. Additionally, Zep excels in more comprehensive and challenging evaluations than DMR that better reflect real-world enterprise use cases. While existing retrieval-augmented generation (RAG) frameworks for large language model (LLM)-based agents are limited to static document retrieval, enterprise applications demand dynamic knowledge integration from diverse sources including ongoing conversations and business data. Zep addresses this fundamental limitation through its core component Graphiti -- a temporally-aware knowledge graph engine that dynamically synthesizes both unstructured conversational data and structured business data while maintaining historical relationships. In the DMR benchmark, which the MemGPT team established as their primary evaluation metric, Zep demonstrates superior performance (94.8% vs 93.4%). Beyond DMR, Zep's capabilities are further validated through the more challenging LongMemEval benchmark, which better reflects enterprise use cases through complex temporal reasoning tasks."
+  },
+  {
+    "title": "AriGraph: Learning Knowledge Graph World Models with Episodic Memory for LLM Agents",
+    "authors": "Petr Anokhin, Nikita Semenov, Artyom Sorokin, Dmitry Evseev, Mikhail Burtsev, Evgeny Burnaev",
+    "venue": "IJCAI",
+    "year": "2025",
+    "arxiv_id": "2407.04363",
+    "pdf_url": "https://arxiv.org/pdf/2407.04363",
+    "abstract": "Advancements in generative AI have broadened the potential applications of Large Language Models (LLMs) in the development of autonomous agents. Achieving true autonomy requires accumulating and updating knowledge gained from interactions with the environment and effectively utilizing it. Current LLM-based approaches leverage past experiences using a full history of observations, summarization, or retrieval augmentation. However, these unstructured memory representations do not facilitate the reasoning and planning essential for complex decision-making. In our study, we introduce AriGraph, a novel method wherein the agent constructs and updates a memory graph that integrates semantic and episodic memories while exploring the environment. We demonstrate that our Ariadne LLM agent, consisting of the proposed memory architecture augmented with planning and decision-making, effectively handles complex tasks within interactive text game environments difficult even for human players. Results show that our approach markedly outperforms other established memory methods and strong RL baselines in a range of problems of varying complexity. Additionally, AriGraph demonstrates competitive performance compared to dedicated knowledge graph-based methods in static multi-hop question-answering."
+  },
+  {
+    "title": "Paths-over-Graph: Knowledge Graph Empowered Large Language Model Reasoning",
+    "authors": "Xingyu Tan, Xiaoyang Wang, Qing Liu, Xiwei Xu, Xin Yuan, Wenjie Zhang",
+    "venue": "WWW",
+    "year": "2025",
+    "arxiv_id": "2410.14211",
+    "pdf_url": "https://arxiv.org/pdf/2410.14211",
+    "abstract": "Large Language Models (LLMs) have achieved impressive results in various tasks but struggle with hallucination problems and lack of relevant knowledge, especially in deep complex reasoning and knowledge-intensive tasks. Knowledge Graphs (KGs), which capture vast amounts of facts in a structured format, offer a reliable source of knowledge for reasoning. However, existing KG-based LLM reasoning methods face challenges like handling multi-hop reasoning, multi-entity questions, and effectively utilizing graph structures. To address these issues, we propose Paths-over-Graph (PoG), a novel method that enhances LLM reasoning by integrating knowledge reasoning paths from KGs, improving the interpretability and faithfulness of LLM outputs. PoG tackles multi-hop and multi-entity questions through a three-phase dynamic multi-hop path exploration, which combines the inherent knowledge of LLMs with factual knowledge from KGs. In order to improve the efficiency, PoG prunes irrelevant information from the graph exploration first and introduces efficient three-step pruning techniques that incorporate graph structures, LLM prompting, and a pre-trained language model. Extensive experiments on five benchmark KGQA datasets demonstrate PoG outperforms the state-of-the-art method ToG across GPT-3.5-Turbo and GPT-4, achieving an average accuracy improvement of 18.9%."
+  },
+  {
+    "title": "GeAR: Graph-enhanced Agent for Retrieval-augmented Generation",
+    "authors": "Zhili Shen, Chenxin Diao, Pavlos Vougiouklis, Pascual Merita, Shriram Piramanayagam, Damien Graux, Dandan Tu, Zeren Jiang, Ruofei Lai, Yang Ren, Jeff Z. Pan",
+    "venue": "ACL Findings",
+    "year": "2025",
+    "arxiv_id": "2412.18431",
+    "pdf_url": "https://arxiv.org/pdf/2412.18431",
+    "abstract": "Retrieval-augmented generation systems rely on effective document retrieval capabilities. By design, conventional sparse or dense retrievers face challenges in multi-hop retrieval scenarios. In this paper, we present GeAR, which advances RAG performance through two key innovations: (i) graph expansion, which enhances any conventional base retriever, such as BM25, and (ii) an agent framework that incorporates graph expansion. Our evaluation demonstrates GeAR's superior retrieval performance on three multi-hop question answering datasets. Additionally, our system achieves state-of-the-art results with improvements exceeding 10% on the challenging MuSiQue dataset, while consuming fewer tokens and requiring fewer iterations than other multi-step retrieval systems."
+  },
+  {
+    "title": "GNN-RAG: Graph Neural Retrieval for Efficient Large Language Model Reasoning on Knowledge Graphs",
+    "authors": "Costas Mavromatis, George Karypis",
+    "venue": "ACL Findings",
+    "year": "2025",
+    "arxiv_id": "2405.20139",
+    "pdf_url": "https://arxiv.org/pdf/2405.20139",
+    "abstract": "Knowledge Graphs (KGs) represent human-crafted factual knowledge in the form of triplets (head, relation, tail), which collectively form a graph. Question Answering over KGs (KGQA) is the task of answering natural questions grounding the reasoning to the information provided by the KG. Large Language Models (LLMs) are the state-of-the-art models for QA tasks due to their remarkable ability to understand natural language. On the other hand, Graph Neural Networks (GNNs) have been widely used for KGQA as they can handle the complex graph information stored in the KG. In this work, we introduce GNN-RAG, a novel method for combining language understanding abilities of LLMs with the reasoning abilities of GNNs in a retrieval-augmented generation (RAG) style. First, a GNN reasons over a dense KG subgraph to retrieve answer candidates for a given question. Second, the shortest paths in the KG that connect question entities and answer candidates are extracted to represent KG reasoning paths. The extracted paths are verbalized and given as input for LLM reasoning with RAG. In our GNN-RAG framework, the GNN acts as a dense subgraph reasoner to extract useful graph information, while the LLM leverages its natural language processing ability for ultimate KGQA. GNN-RAG achieves state-of-the-art performance in two widely used KGQA benchmarks (WebQSP and CWQ), outperforming or matching GPT-4 performance with a 7B tuned LLM."
+  },
+  {
+    "title": "ReKG-MCTS: Reinforcing LLM Reasoning on Knowledge Graphs via Training-Free Monte Carlo Tree Search",
+    "authors": "Xiaozhuang Song, Shufei Zhang, Tianshu Yu",
+    "venue": "ACL Findings",
+    "year": "2025",
+    "arxiv_id": "2506.13241",
+    "pdf_url": "https://aclanthology.org/2025.findings-acl.484.pdf",
+    "abstract": "Recent advancements in large language models (LLMs) have shown promising capabilities in knowledge graph (KG) reasoning. However, existing methods often rely on supervised pipelines or iterative chain-of-thought prompting, limiting their generalization to novel KGs and underutilizing the rich semantic and structural information embedded in KGs. We propose ReKG-MCTS, a novel training-free framework that synergizes Monte Carlo Tree Search (MCTS) with LLM capabilities to enable dynamic reasoning over KGs. ReKG-MCTS conceptualizes KG reasoning as a decision-making process, where MCTS strategically explores paths over KG while LLMs provide semantic guidance for reasoning paths. The framework consists of four phases: (1) UCB-based node selection that balances exploration-exploitation on KG, (2) path expansion with KG structural constraints, (3) LLM-guided MC rollouts for simulation, and (4) value backpropagation. Experimental results on WebQSP and CWQ demonstrate that ReKG-MCTS outperforms existing training-free methods and achieves competitive performance compared to fine-tuned baselines."
+  },
+  {
+    "title": "KG-RAG: Enhancing GUI Agent Decision-Making via Knowledge Graph-Driven Retrieval-Augmented Generation",
+    "authors": "Ziyi Guan, Jason Chun Lok Li, Zhijian Hou, Pingping Zhang, Donglai Xu, Yuzhi Zhao",
+    "venue": "EMNLP",
+    "year": "2025",
+    "arxiv_id": "2509.00366",
+    "pdf_url": "https://arxiv.org/pdf/2509.00366",
+    "abstract": "Despite recent progress, GUI agents powered by Large Language Models (LLMs) struggle with complex mobile tasks due to limited app-specific knowledge. While UI Transition Graphs (UTGs) offer structured navigation representations, they are underutilized due to poor extraction and inefficient integration. We introduce KG-RAG, a Knowledge Graph-driven Retrieval-Augmented Generation framework that transforms fragmented UTGs into structured vector databases for efficient real-time retrieval. By leveraging an intent-guided LLM search method, KG-RAG generates actionable navigation paths, enhancing agent decision-making. Furthermore, we introduce KG-Android-Bench and KG-Harmony-Bench, two benchmarks tailored to the Chinese mobile ecosystem to evaluate diverse mobile agents. Experimental results show that KG-RAG outperforms existing methods, achieving a 75.8% success rate (8.9% improvement over AutoDroid), 84.6% decision accuracy (8.1% improvement), and reducing average task steps from 4.5 to 4.1. KG-RAG also transfers to web/desktop (+40% SR on Weibo-web; +20% on QQ Music-desktop)."
+  },
+  {
+    "title": "Knowledge Graph-Guided Retrieval Augmented Generation",
+    "authors": "Xiangrong Zhu, Yuexiang Xie, Yi Liu, Yaliang Li, Wei Hu",
+    "venue": "NAACL",
+    "year": "2025",
+    "arxiv_id": "2502.06864",
+    "pdf_url": "https://aclanthology.org/2025.naacl-long.449.pdf",
+    "abstract": "Retrieval-augmented generation (RAG) has emerged as a promising technology for addressing hallucination issues in the responses generated by large language models (LLMs). Existing studies on RAG primarily focus on applying semantic-based approaches to retrieve isolated relevant chunks, which ignore their intrinsic relationships. In this paper, we propose a novel Knowledge Graph-Guided Retrieval Augmented Generation (KG²RAG) framework that utilizes knowledge graphs (KGs) to provide fact-level relationships between chunks, improving the diversity and coherence of the retrieved results. Specifically, after performing a semantic-based retrieval to provide seed chunks, KG²RAG employs a KG-guided chunk expansion process and a KG-based chunk organization process to deliver relevant and important knowledge in well-organized paragraphs. Extensive experiments conducted on the HotpotQA dataset and its variants demonstrate the advantages of KG²RAG compared to existing RAG-based approaches, in terms of both response quality and retrieval quality."
+  },
+  {
+    "title": "LightPROF: A Lightweight Reasoning Framework for Large Language Model on Knowledge Graph",
+    "authors": "Tu Ao, Yanhua Yu, Yuling Wang, Yang Deng, Zirui Guo, Liang Pang, Pinghui Wang, Tat-Seng Chua, Xiao Zhang, Zhen Cai",
+    "venue": "AAAI",
+    "year": "2025",
+    "arxiv_id": "2504.03137",
+    "pdf_url": "https://arxiv.org/pdf/2504.03137",
+    "abstract": "Large Language Models (LLMs) have impressive capabilities in text understanding and zero-shot reasoning. However, delays in knowledge updates may cause them to reason incorrectly or produce harmful results. Knowledge Graphs (KGs) provide rich and reliable contextual information for the reasoning process of LLMs by structurally organizing and connecting a wide range of entities and relations. Existing KG-based LLM reasoning methods only inject KGs' knowledge into prompts in a textual form, ignoring its structural information. Moreover, they mostly rely on close-source models or open-source models with large parameters, which poses challenges to high resource consumption. To address this, we propose a novel Lightweight and efficient Prompt learning-ReasOning Framework for KGQA (LightPROF), which leverages the full potential of LLMs to tackle complex reasoning tasks in a parameter-efficient manner. Specifically, LightPROF follows a 'Retrieve-Embed-Reason process', first accurately, and stably retrieving the corresponding reasoning graph from the KG through retrieval module. Next, through a Transformer-based Knowledge Adapter, it finely extracts and integrates factual and structural information from the KG, then maps this information to the LLM's token embedding space, creating an LLM-friendly prompt to be used by the LLM for the final reasoning. Additionally, LightPROF only requires training Knowledge Adapter and can be compatible with any open-source LLM."
+  },
+  {
+    "title": "GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation",
+    "authors": "Linhao Luo, Zicheng Zhao, Gholamreza Haffari, Yuan-Fang Li, Chen Gong, Shirui Pan",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "2502.01113",
+    "pdf_url": "https://arxiv.org/pdf/2502.01113",
+    "abstract": "Retrieval-augmented generation (RAG) has proven effective in integrating knowledge into large language models (LLMs). However, conventional RAGs struggle to capture complex relationships between pieces of knowledge, limiting their performance in intricate reasoning that requires integrating knowledge from multiple sources. Recently, graph-enhanced retrieval augmented generation (GraphRAG) builds graph structure to explicitly model these relationships, enabling more effective and efficient retrievers. Nevertheless, its performance is still hindered by the noise and incompleteness within the graph structure. To address this, we introduce GFM-RAG, a novel graph foundation model (GFM) for retrieval augmented generation. GFM-RAG is powered by an innovative graph neural network that reasons over graph structure to capture complex query-knowledge relationships. The GFM with 8M parameters undergoes a two-stage training process on large-scale datasets, comprising 60 knowledge graphs with over 14M triples and 700k documents. This results in impressive performance and generalizability for GFM-RAG, making it the first graph foundation model applicable to unseen datasets for retrieval without any fine-tuning required."
+  },
+  {
+    "title": "ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG",
+    "authors": "Yuhan Hu, et al.",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "2510.13193",
+    "pdf_url": "https://arxiv.org/pdf/2510.13193",
+    "abstract": "Knowledge graphs (KGs), with their structured representation capabilities, offer a promising avenue for enhancing Retrieval Augmented Generation (RAG) systems, leading to the development of KG-RAG systems. Nevertheless, existing methods often struggle to achieve effective synergy between system effectiveness and cost efficiency, leading to neither unsatisfying performance nor excessive LLM prompt tokens and inference time. To this end, this paper proposes REMINDRAG, which employs an LLM-guided graph traversal featuring node exploration, node exploitation, and, most notably, memory replay, to improve both system effectiveness and cost efficiency. Specifically, REMINDRAG memorizes traversal experience within KG edge embeddings, mirroring the way LLMs 'memorize' world knowledge within their parameters, but in a train-free manner. We theoretically and experimentally confirm the effectiveness of REMINDRAG, demonstrating its superiority over existing baselines across various benchmark datasets. ReMindRAG achieves performance gains of 5% to 10% while simultaneously reducing the average cost per query by approximately 50%."
+  },
+  {
+    "title": "Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need?",
+    "authors": "Anonymous, et al.",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "2510.16582",
+    "pdf_url": "https://arxiv.org/pdf/2510.16582",
+    "abstract": "Retrieval-Augmented Generation (RAG) based on knowledge graphs (KGs) enhances large language models (LLMs) by providing structured and interpretable external knowledge. However, existing KG-based RAG methods struggle to retrieve accurate and diverse information from text-rich KGs for complex real-world queries. Process Reward Models (PRMs) offer a way to align the retrieval process of KG-based RAG with query-specific knowledge requirements, but they heavily rely on process-level supervision signals that are expensive and hard to obtain on KGs. To address this challenge, we propose GraphFlow, a framework that efficiently retrieves accurate and diverse knowledge required for real-world queries from text-rich KGs. GraphFlow employs a transition-based flow matching objective to jointly optimize a retrieval policy and a flow estimator. The flow estimator factorizes the reward of the retrieval outcome into the intermediate retrieval states. GraphFlow outperforms strong KG-RAG baselines, including GPT-4o, by 10% on average in hit rate and recall. It also shows strong generalization to unseen KGs."
+  },
+  {
+    "title": "Graph-Augmented Large Language Model Agents: Current Progress and Future Prospects",
+    "authors": "Yixin Liu, Yuxin Tang, Junyuan Mao, Jing Yang, Chen Gao, Yong Li, Shirui Pan",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2507.21407",
+    "pdf_url": "https://arxiv.org/pdf/2507.21407",
+    "abstract": "Autonomous agents based on large language models (LLMs) have demonstrated impressive capabilities in a wide range of applications, including web navigation, software development, and embodied control. While most LLMs are limited in several key agentic procedures, such as reliable planning, long-term memory, tool management, and multi-agent coordination, graphs can serve as a powerful auxiliary structure to enhance structure, continuity, and coordination in complex agent workflows. Given the rapid growth and fragmentation of research on Graph-augmented LLM Agents (GLA), this paper offers a timely and comprehensive overview of recent advances and also highlights key directions for future work. Specifically, we categorize existing GLA methods by their primary functions in LLM agent systems, including planning, memory, and tool usage, and then analyze how graphs and graph learning algorithms contribute to each. For multi-agent systems, we further discuss how GLA solutions facilitate the orchestration, efficiency optimization, and trustworthiness of MAS."
+  },
+  {
+    "title": "AGENTiGraph: A Multi-Agent Knowledge Graph Framework for Interactive, Domain-Specific LLM Chatbots",
+    "authors": "Xinjie Zhao, Rayan Sayyad Yousefi, Hugo Almeida, Yutaka Matsuo, Chanjun Park, Irene Li",
+    "venue": "CIKM",
+    "year": "2025",
+    "arxiv_id": "2508.02999",
+    "pdf_url": "https://arxiv.org/pdf/2508.02999",
+    "abstract": "Large Language Models (LLMs) have made significant strides in natural language understanding but face limitations in handling domain-specific data, particularly through their interaction with knowledge graphs. To address this, we present AGENTiGraph (Adaptive Generative ENgine for Task-based Interaction and Graphical Representation), a user-friendly, agent-driven system that enables intuitive interaction and management of domain-specific data through the manipulation of knowledge graphs in natural language. It gives non-technical users a complete, visual solution to incrementally build and refine their knowledge bases, allowing multi-round dialogues and dynamic updates without specialized query languages. The flexible design of AGENTiGraph, including intent classification, task planning, and automatic knowledge integration, ensures seamless reasoning between diverse tasks. Evaluated on a 3,500-query benchmark within an educational scenario, the system outperforms strong zero-shot baselines (achieving 95.12% classification accuracy, 90.45% execution success), indicating its potential in diverse domains."
+  },
+  {
+    "title": "A-Mem: Agentic Memory for LLM Agents",
+    "authors": "Wujiang Xu, Zujie Liang, Kai Mei, Hang Gao, Juntao Tan, Yongfeng Zhang",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "2502.12110",
+    "pdf_url": "https://arxiv.org/pdf/2502.12110",
+    "abstract": "While large language model (LLM) agents can effectively use external tools for complex real-world tasks, they require memory systems to leverage historical experiences. Current memory systems enable basic storage and retrieval but lack sophisticated memory organization, despite recent attempts to incorporate graph databases. Moreover, these systems' fixed operations and structures limit their adaptability across diverse tasks. To address this limitation, this paper proposes a novel agentic memory system for LLM agents that can dynamically organize memories in an agentic way. Following the basic principles of the Zettelkasten method, we designed our memory system to create interconnected knowledge networks through dynamic indexing and linking. When a new memory is added, we generate a comprehensive note containing multiple structured attributes, including contextual descriptions, keywords, and tags. The system then analyzes historical memories to identify relevant connections, establishing links where meaningful similarities exist. Additionally, this process enables memory evolution—as new memories are integrated, they can trigger updates to the contextual representations and attributes of existing historical memories, allowing the memory network to continuously refine its understanding."
+  },
+  {
+    "title": "Think-on-Graph 3.0: Efficient and Adaptive LLM Reasoning on Heterogeneous Graphs via Multi-Agent Dual-Evolving Context Retrieval",
+    "authors": "Shengjie Ma, Chengjin Xu, Cehao Yang, Xuhui Jiang, Kaisheng Zeng, Jiaxin Mao, Jian Guo",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2509.21710",
+    "pdf_url": "https://arxiv.org/pdf/2509.21710",
+    "abstract": "Retrieval-Augmented Generation (RAG) has emerged as a critical paradigm for mitigating hallucination in large language models (LLMs), with knowledge graph (KG)-based methods showing promise but facing fundamental challenges of static knowledge, sparse coverage, and inefficient retrieval. We propose Think-on-Graph 3.0 (ToG-3), introducing a novel Multi-Agent Context Evolution and Retrieval (MACER) mechanism. Our core contribution is the dynamic construction and iterative refinement of a Chunk-Triplets-Community heterogeneous graph index, powered by a Dual-Evolution process that adaptively evolves both the query and the retrieved sub-graph during reasoning. A multi-agent system, comprising Constructor, Retriever, Reflector, and Responser agents, collaboratively engages in an iterative process of evidence retrieval, sufficiency reflection, and targeted graph evolution. This allows ToG-3 to adaptively build a targeted graph index during reasoning and enable deep, precise reasoning even with lightweight LLMs."
+  },
+  {
+    "title": "Agentic-KGR: Co-evolutionary Knowledge Graph Construction through Multi-Agent Reinforcement Learning",
+    "authors": "Pengshuai Li, Yang Sun, Bingsheng Tong",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2510.09156",
+    "pdf_url": "https://arxiv.org/pdf/2510.09156",
+    "abstract": "Current knowledge-enhanced large language models (LLMs) rely on static, pre-constructed knowledge bases that suffer from coverage gaps and temporal obsolescence, limiting their effectiveness in dynamic information environments. We present Agentic-KGR, a novel framework enabling co-evolution between LLMs and knowledge graphs (KGs) through multi-round reinforcement learning (RL). Our approach introduces three key innovations: (1) a dynamic schema expansion mechanism that systematically extends graph ontologies beyond pre-defined boundaries during training; (2) a retrieval-augmented memory system enabling continuous optimization between model parameters and knowledge structures through bidirectional interaction; (3) a learnable multi-scale prompt compression approach that preserves critical information while reducing computational complexity through adaptive sequence optimization. Experimental results demonstrate substantial improvements over supervised baselines and single-round RL approaches in knowledge extraction tasks. When integrated with GraphRAG, Agentic-KGR achieves up to +33.3 points improvement over existing RL methods in graph extraction and +12.8 points in downstream QA tasks."
+  },
+  {
+    "title": "AgREE: Agentic Reasoning for Knowledge Graph Completion on Emerging Entities",
+    "authors": "Ruochen Zhao, Simone Conia, Eric Peng, Min Li, Saloni Potdar",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2508.04118",
+    "pdf_url": "https://arxiv.org/pdf/2508.04118",
+    "abstract": "Open-domain Knowledge Graph Completion (KGC) faces significant challenges in an ever-changing world, especially with the continual emergence of new entities in daily news. Existing approaches mainly rely on pretrained language models' parametric knowledge, pre-constructed queries, or single-step retrieval, typically requiring substantial supervision and training data, yet often fail to capture comprehensive and up-to-date information about unpopular and/or emerging entities. To address these limitations, we propose AgREE, a novel agent-based framework that combines iterative retrieval actions and multi-step reasoning to dynamically construct rich knowledge graph triplets. Experiments show that, despite requiring zero training efforts, AgREE significantly outperforms existing methods in constructing knowledge graph triplets, especially for emerging entities that were not seen during language models' training processes, outperforming previous methods by up to 13.7%. Moreover, we propose a new evaluation methodology that addresses a fundamental weakness of existing setups and a new benchmark for KGC on emerging entities."
+  },
+  {
+    "title": "Enhancing LLM Planning for Robotics Manipulation through Hierarchical Procedural Knowledge Graphs",
+    "authors": "Anonymous, et al.",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "N/A",
+    "pdf_url": "https://openreview.net/pdf?id=8LO0vLRXpz",
+    "abstract": "Existing LLM-driven robotic manipulation approaches excel at simple pick-and-place tasks but are insufficient for complex manipulation tasks due to inaccurate procedural knowledge. Recent research demonstrates that providing procedural knowledge enhances LLMs' planning capabilities by supplementing limited procedural commonsense. We propose Hierarchical Procedural Knowledge Graphs (HP-KG) to enhance LLMs for complex robotic planning while significantly reducing the demand for LLM scale. HP-KG organizes procedures into three distinct layers: tasks, steps, and actions, with each procedure enriched with textual attributes. To eliminate the need for manual knowledge engineering, we construct the procedural knowledge graph through multi-agent calibration. Household-related tasks are systematically filtered from the WikiHow corpus and combined with the BEHAVIOR dataset. Evaluated on RLBench and Blocks Arrange tasks, HP-KG improves baseline success rates when retrieving the most relevant procedures."
+  },
+  {
+    "title": "GraphMind: LLMs as Dynamic Knowledge Builders for Sequential Decision-Making",
+    "authors": "Anonymous, et al.",
+    "venue": "OpenReview/ICLR",
+    "year": "2026",
+    "arxiv_id": "N/A",
+    "pdf_url": "https://openreview.net/pdf?id=XromAiEaE3",
+    "abstract": "Recent advances in large language models (LLMs) have shown promise as autonomous agents capable of sequential decision-making in complex environments. A core challenge for these agents is to efficiently internalize and leverage new information that emerges dynamically during their tasks. To address this challenge, we propose GraphMind, an LLM agent architecture that integrates a knowledge graph as a graph-based memory module to facilitate high-level action planning. In particular, the agent incrementally constructs the knowledge graph through environmental interactions and retrieves relevant information to formulate efficient plans. GraphMind is particularly designed for partially observable environments, which require agents to manage long-term memory and perform effective exploration under incomplete information. We evaluate GraphMind in complex navigating environments specifically designed to present long-horizon and partially observable challenges. Experimental results demonstrate that employing a knowledge graph as an external memory significantly enhances the success rate and efficiency of the LLM's planning capabilities."
+  },
+  {
+    "title": "Agent-as-a-Graph: Knowledge Graph-Based Tool and Agent Retrieval for LLM Multi-Agent Systems",
+    "authors": "Bowen Wei, Sheng Zhang, Yifan Yu, Yawen Wu, Hao Cheng, Bryan Catanzaro, Mohit Iyyer, Hoifung Poon",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2511.18194",
+    "pdf_url": "https://arxiv.org/pdf/2511.18194",
+    "abstract": "Recent advances in Large Language Model (LLM) Multi-Agent Systems (MAS) enable scalable orchestration of specialized sub-agents, each coordinating hundreds or thousands of tools. However, when given complex queries, a multi-agent orchestrator must identify both the right sub-agent and the right tools to invoke. Existing retrieval methods address tool selection in isolation and overlook the dependency between sub-agents and the tools they expose. To address this, we propose Agent-as-a-Graph, an approach that represents both tools and their parent agents as nodes and edges in a knowledge graph. Tools and agent metadata are jointly indexed; in retrieval, weighted Reciprocal Rank Fusion (RRF) is applied for reranking tools and agents, and parent agents are traversed in the knowledge graph for the final set of agents. Agent-as-a-Graph demonstrates substantial improvements over baselines on the LiveMCPBench, achieving up to +20.8% Recall@5 and +18.0% NDCG@5 for tool retrieval."
+  },
+  {
+    "title": "OG-RAG: Ontology-Grounded Retrieval-Augmented Generation For Large Language Models",
+    "authors": "Kartik Sharma, Peeyush Kumar, Yunqing Li",
+    "venue": "EMNLP",
+    "year": "2025",
+    "arxiv_id": "2412.15235",
+    "pdf_url": "https://arxiv.org/pdf/2412.15235",
+    "abstract": "This paper presents OG-RAG, an Ontology-Grounded Retrieval Augmented Generation method designed to enhance LLM-generated responses by anchoring retrieval processes in domain-specific ontologies. While LLMs are widely used for tasks like question answering and search, they struggle to adapt to specialized knowledge, such as industrial workflows or knowledge work, without expensive fine-tuning or sub-optimal retrieval methods. Existing retrieval-augmented models, such as RAG, offer improvements but fail to account for structured domain knowledge, leading to suboptimal context generation. Ontologies, which conceptually organize domain knowledge by defining entities and their interrelationships, offer a structured representation to address this gap. OG-RAG constructs a hypergraph representation of domain documents, where each hyperedge encapsulates clusters of factual knowledge grounded using domain-specific ontology. An optimization algorithm then retrieves the minimal set of hyperedges that constructs a precise, conceptually grounded context for the LLM. This method enables efficient retrieval while preserving the complex relationships between entities. Evaluations across four LLMs show that OG-RAG increases the recall of accurate facts by 55% and improves response correctness by 40%."
+  },
+  {
+    "title": "ODA: Observation-Driven Agent for integrating LLMs and Knowledge Graphs",
+    "authors": "Lei Sun, Zhengwei Tao, Youdi Li, Hiroshi Arakawa",
+    "venue": "ACL Findings",
+    "year": "2024",
+    "arxiv_id": "2404.07677",
+    "pdf_url": "https://arxiv.org/pdf/2404.07677",
+    "abstract": "The integration of Large Language Models (LLMs) and knowledge graphs (KGs) has achieved remarkable success in various natural language processing tasks. However, existing methodologies that integrate LLMs and KGs often navigate the task-solving process solely based on the LLM's analysis of the question, overlooking the rich cognitive potential inherent in the vast knowledge encapsulated in KGs. To address this issue, we propose Observation-Driven Agent (ODA), a novel AI agent framework tailored for tasks involving KGs. ODA incorporates KG reasoning abilities via global observation, which enhances reasoning capabilities through a cyclical paradigm of observation, action, and reflection. Confronting the exponential explosion of knowledge during observation, we innovatively design a recursive observation mechanism. Subsequently, we integrate the observed knowledge into the action and reflection modules. Through extensive experiments, ODA demonstrates state-of-the-art performance on several datasets, notably achieving accuracy improvements of 12.87% and 8.9%."
+  },
+  {
+    "title": "Knowledge Graph Retrieval-Augmented Generation for LLM-based Recommendation",
+    "authors": "Shijie Wang, Wenqi Fan, Yue Feng, Xinyu Ma, Shuaiqiang Wang, Dawei Yin",
+    "venue": "ACL",
+    "year": "2025",
+    "arxiv_id": "2501.02226",
+    "pdf_url": "https://aclanthology.org/2025.acl-long.1317.pdf",
+    "abstract": "Recommender systems have become increasingly vital in our daily lives, helping to alleviate the problem of information overload across various user-oriented online services. The emergence of Large Language Models (LLMs) has yielded remarkable achievements, demonstrating their potential for the development of next-generation recommender systems. Despite these advancements, LLM-based recommender systems face inherent limitations stemming from their LLM backbones, particularly issues of hallucinations and the lack of up-to-date and domain-specific knowledge. Recently, Retrieval-Augmented Generation (RAG) has garnered significant attention for addressing these limitations by leveraging external knowledge sources to enhance the understanding and generation of LLMs. However, vanilla RAG methods often introduce noise and degrade generation quality when applied to LLM-based recommendations. To address this, we propose a novel framework, Knowledge Graph Retrieval-Augmented Generation (K-RagRec), that leverages structured knowledge graph information to facilitate the recommendation generation process."
+  },
+  {
+    "title": "Plan-on-Graph: Self-Correcting Adaptive Planning of Large Language Model on Knowledge Graphs",
+    "authors": "Liyi Chen, Panrong Tong, Zhongming Jin, Ying Sun, Jieping Ye, Hui Xiong",
+    "venue": "NeurIPS",
+    "year": "2024",
+    "arxiv_id": "2410.23875",
+    "pdf_url": "https://arxiv.org/pdf/2410.23875",
+    "abstract": "Large Language Models (LLMs) have shown remarkable reasoning capabilities on complex tasks, but they still suffer from out-of-date knowledge, hallucinations, and opaque decision-making. In contrast, Knowledge Graphs (KGs) can provide explicit and editable knowledge for LLMs to alleviate these issues. Existing paradigm of KG-augmented LLM manually predefines the breadth of exploration space and requires flawless navigation in KGs. However, this paradigm cannot adaptively explore reasoning paths in KGs based on the question semantics and self-correct erroneous reasoning paths, resulting in a bottleneck in efficiency and effect. To address these limitations, we propose a novel self-correcting adaptive planning paradigm for KG-augmented LLM named Plan-on-Graph (PoG), which first decomposes the question into several sub-objectives and then repeats the process of adaptively exploring reasoning paths, updating memory, and reflecting on the need to self-correct erroneous reasoning paths until arriving at the answer. PoG is the first to integrate a reflection mechanism for self-correction and adaptive KG exploration into KG-augmented LLMs."
+  },
+  {
+    "title": "Efficient and Transferable Agentic Knowledge Graph RAG via Reinforcement Learning",
+    "authors": "Jinyeop Song, Song Wang, Julian Shun, Yada Zhu",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2509.26383",
+    "pdf_url": "https://arxiv.org/pdf/2509.26383",
+    "abstract": "Knowledge-graph retrieval-augmented generation (KG-RAG) couples large language models (LLMs) with structured, verifiable knowledge graphs (KGs) to reduce hallucinations and expose reasoning traces. However, many KG-RAG systems compose multiple LLM modules (e.g planning, reasoning, and responding), inflating inference cost and binding behavior to a specific target KG. To address this, we introduce KG-R1, an agentic KG retrieval-augmented generation (KG-RAG) framework through reinforcement learning (RL). KG-R1 utilizes a single agent that interacts with KGs as its environment, learning to retrieve at each step and incorporating the retrieved information into its reasoning and generation. The process is optimized through end-to-end RL. In controlled experiments across Knowledge-Graph Question Answering (KGQA) benchmarks, our method demonstrates both efficiency and transferability: Using Qwen-2.5-3B, KG-R1 improves answer accuracy with fewer generation tokens than prior multi-module workflow methods that use larger foundation or fine-tuned models."
+  },
+  {
+    "title": "KnoBuilder: An LLM-Agent for Autonomous and Personalized Knowledge Graph Construction from Unstructured Text",
+    "authors": "Anonymous, et al.",
+    "venue": "OpenReview",
+    "year": "2025",
+    "arxiv_id": "N/A",
+    "pdf_url": "https://openreview.net/pdf?id=teewCPCv2m",
+    "abstract": "We present KnoBuilder, a novel LLM-based agentic framework for the autonomous construction of personalized knowledge graphs from unstructured text corpora. KnoBuilder implements a synergistic loop between an LLM agent and a dynamically evolving knowledge graph, leveraging structured graph state for in-context, schema-aware extraction and disambiguation. The framework introduces personalization through user-driven schema design and operates through three integrated stages: graph-aware entity and relation extraction, semantic-structural entity resolution, and dynamic graph integration. To enable extraction, we developed a generalized ontology with categories of generally important entity types and their relations. To validate the framework, we generated and curated 30 articles with corresponding ground-truth knowledge graphs. KnoBuilder achieves an 85% F1-score in extraction quality, a 46% improvement in acquisition efficiency, and 91% entity resolution accuracy."
+  }
+]
