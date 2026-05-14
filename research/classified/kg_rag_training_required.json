@@ -1,0 +1,119 @@
+[
+  {
+    "title": "GFM-RAG: Graph Foundation Model for Retrieval Augmented Generation",
+    "authors": "Linhao Luo, Zicheng Zhao, Gholamreza Haffari",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "2502.01113",
+    "pdf_url": "https://arxiv.org/pdf/2502.01113",
+    "abstract": "Retrieval-augmented generation (RAG) has proven effective in integrating knowledge into large language models (LLMs). However, conventional RAGs struggle to capture complex relationships between pieces of knowledge, limiting their performance in intricate reasoning that requires integrating knowledge from multiple sources. Recently, graph-enhanced retrieval augmented generation (GraphRAG) builds graph structure to explicitly model these relationships, enabling more effective and efficient retrievers. Nevertheless, its performance is still hindered by the noise and incompleteness within the graph structure. To address this, we introduce GFM-RAG, a novel graph foundation model (GFM) for retrieval augmented generation. GFM-RAG is powered by an innovative graph neural network that reasons over graph structure to capture complex query-knowledge relationships. The GFM with 8M parameters undergoes a two-stage training process on large-scale datasets, comprising 60 knowledge graphs with over 14M triples and 700k documents. This results in impressive performance and generalizability for GFM-RAG, making it the first graph foundation model applicable to unseen datasets for retrieval without any fine-tuning required. Extensive experiments on three multi-hop QA datasets and seven domain-specific RAG datasets demonstrate that GFM-RAG achieves state-of-the-art performance while maintaining efficiency and alignment with neural scaling laws, highlighting its potential for further improvement.",
+    "source_lists": [
+      "graph_memory",
+      "kg_agent",
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "ReMindRAG: Low-Cost LLM-Guided Knowledge Graph Traversal for Efficient RAG",
+    "authors": "Yifan Hu, Wei Wang, Kun Wang",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "2510.13193",
+    "pdf_url": "https://arxiv.org/pdf/2510.13193",
+    "abstract": "Knowledge graphs (KGs), with their structured representation capabilities, offer a promising avenue for enhancing Retrieval Augmented Generation (RAG) systems, leading to the development of KG-RAG systems. Nevertheless, existing methods often struggle to achieve effective synergy between system effectiveness and cost efficiency, leading to neither unsatisfying performance nor excessive LLM prompt tokens and inference time. To this end, this paper proposes REMINDRAG, which employs an LLM-guided graph traversal featuring node exploration, node exploitation, and, most notably, memory replay, to improve both system effectiveness and cost efficiency. Specifically, REMINDRAG memorizes traversal experience within KG edge embeddings, mirroring the way LLMs 'memorize' world knowledge within their parameters, but in a train-free manner. We theoretically and experimentally confirm the effectiveness of REMINDRAG, demonstrating its superiority over existing baselines across various benchmark datasets. ReMindRAG achieves performance gains of 5% to 10% while simultaneously reducing the average cost per query by approximately 50%.",
+    "source_lists": [
+      "kg_agent",
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Can Knowledge-Graph-based Retrieval Augmented Generation Really Retrieve What You Need? (GraphFlow)",
+    "authors": "Yongrui Chen, Junfeng Liu, Shichao Sun",
+    "venue": "NeurIPS",
+    "year": "2025",
+    "arxiv_id": "2510.16582",
+    "pdf_url": "https://arxiv.org/pdf/2510.16582",
+    "abstract": "Retrieval-Augmented Generation (RAG) based on knowledge graphs (KGs) enhances large language models (LLMs) by providing structured and interpretable external knowledge. However, existing KG-based RAG methods struggle to retrieve accurate and diverse information from text-rich KGs for complex real-world queries. Process Reward Models (PRMs) offer a way to align the retrieval process of KG-based RAG with query-specific knowledge requirements, but they heavily rely on process-level supervision signals that are expensive and hard to obtain on KGs. To address this challenge, we propose GraphFlow, a framework that efficiently retrieves accurate and diverse knowledge required for real-world queries from text-rich KGs. GraphFlow employs a transition-based flow matching objective to jointly optimize a retrieval policy and a flow estimator. The flow estimator factorizes the reward of the retrieval outcome into the intermediate retrieval states. GraphFlow outperforms strong KG-RAG baselines, including GPT-4o, by 10% on average in hit rate and recall. It also shows strong generalization to unseen KGs.",
+    "source_lists": [
+      "graph_memory",
+      "kg_agent",
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Personalizing Large Language Models using Retrieval Augmented Generation and Knowledge Graph",
+    "authors": "Deeksha Prahlad, Chanhee Lee, Dongha Kim",
+    "venue": "WWW Companion",
+    "year": "2025",
+    "arxiv_id": "2505.09945",
+    "pdf_url": "https://arxiv.org/pdf/2505.09945",
+    "abstract": "Large language models (LLMs) have enabled numerous applications including chatbots and conversational assistants, but being trained on vast amounts of data, LLMs often undergo high levels of over-fitting resulting in hallucinations in output generation. One of the root causes of such problems is the lack of timely, factual, and personalized information fed to the LLM. In this paper, we propose an approach to address these problems by introducing retrieval augmented generation (RAG) using knowledge graphs (KGs) to assist the LLM in personalized response generation tailored to the users. KGs have the advantage of storing continuously updated factual information in a structured way. While our KGs can be used for a variety of frequently updated personal data, such as calendar, contact, and location data, we focus on calendar data in this paper. Our approach stores updated personal and factual information in a structured way while protecting user privacy by not sending sensitive data to cloud-based LLM providers. Experimental results show that our approach works significantly better in understanding personal information and generating accurate responses compared to the baseline LLMs using personal data as text inputs.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Graph-R1: Towards Agentic GraphRAG Framework via End-to-end Reinforcement Learning",
+    "authors": "Haoran Luo, Haihong E, Guanting Chen",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2507.21892",
+    "pdf_url": "https://arxiv.org/pdf/2507.21892",
+    "abstract": "Retrieval-Augmented Generation (RAG) mitigates hallucination in LLMs by incorporating external knowledge, but relies on chunk-based retrieval that lacks structural semantics. GraphRAG methods improve RAG by modeling knowledge as entity-relation graphs, but still face challenges in high construction cost, fixed one-time retrieval, and reliance on long-context reasoning and prompt design. To address these challenges, this paper proposes Graph-R1, an agentic GraphRAG framework via end-to-end reinforcement learning (RL). It introduces lightweight knowledge hypergraph construction, models retrieval as a multi-turn agent-environment interaction, and optimizes the agent process via an end-to-end reward mechanism. Experiments on standard RAG datasets show that Graph-R1 outperforms traditional GraphRAG and RL-enhanced RAG methods in reasoning accuracy, retrieval efficiency, and generation quality.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "GraphRAG-R1: Graph Retrieval-Augmented Generation with Process-Constrained Reinforcement Learning",
+    "authors": "Chuanyue Yu, Kuo Zhao, Yuhan Li",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2507.23581",
+    "pdf_url": "https://arxiv.org/pdf/2507.23581",
+    "abstract": "Graph Retrieval-Augmented Generation (GraphRAG) has shown great effectiveness in enhancing the reasoning abilities of LLMs by leveraging graph structures for knowledge representation and modeling complex real-world relationships. However, existing GraphRAG methods still face significant bottlenecks when handling complex problems that require multi-hop reasoning, as their query and retrieval phases are largely based on pre-defined heuristics and do not fully utilize the reasoning potentials of LLMs. To address this problem, we propose GraphRAG-R1, an adaptive GraphRAG framework by training LLMs with process-constrained outcome-based reinforcement learning (RL) to enhance the multi-hop reasoning ability. Our method can decompose complex problems, autonomously invoke retrieval tools to acquire necessary information, and perform effective reasoning. Specifically, we utilize a modified version of Group Relative Policy Optimization (GRPO) that supports rollout-with-thinking capability, and design two novel reward signals: Progressive Retrieval Attenuation (PRA) and Cost-Aware F1 (CAF). Additionally, our framework includes a phase-dependent training strategy with three training stages, and a hybrid graph-textual retrieval to improve the reasoning capacity.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Crafting Personalized Agents through Retrieval-Augmented Generation on Editable Memory Graphs (EMG-RAG)",
+    "authors": "Zheng Wang, Zhongyang Li, Zeren Jiang, Dandan Tu, Wei Shi",
+    "venue": "EMNLP 2024",
+    "year": "2024",
+    "arxiv_id": "2409.19401",
+    "pdf_url": "https://arxiv.org/pdf/2409.19401",
+    "abstract": "In the age of mobile internet, user data, often referred to as memories, is continuously generated on personal devices. Effectively managing and utilizing this data to deliver services to users is a compelling research topic. In this paper, we introduce a novel task of crafting personalized agents powered by large language models (LLMs), which utilize a user's smartphone memories to enhance downstream applications with advanced LLM capabilities. To achieve this goal, we introduce EMG-RAG, a solution that combines Retrieval-Augmented Generation (RAG) techniques with an Editable Memory Graph (EMG). This approach is further optimized using Reinforcement Learning to address three distinct challenges: data collection, editability, and selectability. Extensive experiments on a real-world dataset validate the effectiveness of EMG-RAG, achieving an improvement of approximately 10% over the best existing approach. Additionally, the personalized agents have been transferred into a real smartphone AI assistant, which leads to enhanced usability.",
+    "source_lists": [
+      "graph_memory"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Efficient and Transferable Agentic Knowledge Graph RAG via Reinforcement Learning",
+    "authors": "Jinyeop Song, Song Wang, Julian Shun, Yada Zhu",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2509.26383",
+    "pdf_url": "https://arxiv.org/pdf/2509.26383",
+    "abstract": "Knowledge-graph retrieval-augmented generation (KG-RAG) couples large language models (LLMs) with structured, verifiable knowledge graphs (KGs) to reduce hallucinations and expose reasoning traces. However, many KG-RAG systems compose multiple LLM modules (e.g planning, reasoning, and responding), inflating inference cost and binding behavior to a specific target KG. To address this, we introduce KG-R1, an agentic KG retrieval-augmented generation (KG-RAG) framework through reinforcement learning (RL). KG-R1 utilizes a single agent that interacts with KGs as its environment, learning to retrieve at each step and incorporating the retrieved information into its reasoning and generation. The process is optimized through end-to-end RL. In controlled experiments across Knowledge-Graph Question Answering (KGQA) benchmarks, our method demonstrates both efficiency and transferability: Using Qwen-2.5-3B, KG-R1 improves answer accuracy with fewer generation tokens than prior multi-module workflow methods that use larger foundation or fine-tuned models.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_rag",
+    "training_type": "training_required"
+  }
+]

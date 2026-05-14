@@ -1,0 +1,114 @@
+[
+  {
+    "title": "Reasoning of Large Language Models over Knowledge Graphs with Super-Relations",
+    "authors": "Song Wang, Junhong Lin, Xiaojie Guo, Julian Shun, Jundong Li, Yada Zhu",
+    "venue": "ICLR",
+    "year": "2025",
+    "arxiv_id": "2503.22166",
+    "pdf_url": "https://arxiv.org/pdf/2503.22166",
+    "abstract": "While large language models (LLMs) have made significant progress in processing and reasoning over knowledge graphs, current methods suffer from a high non-retrieval rate. This limitation reduces the accuracy of answering questions based on these graphs. Our analysis reveals that the combination of greedy search and forward reasoning is a major contributor to this issue. To overcome these challenges, we introduce the concept of super-relations, which enables both forward and backward reasoning by summarizing and connecting various relational paths within the graph. This holistic approach not only expands the search space, but also significantly improves retrieval efficiency. In this paper, we propose the ReKnoS framework, which aims to Reason over Knowledge Graphs with Super-Relations. Our framework's key advantages include the inclusion of multiple relation paths through super-relations, enhanced forward and backward reasoning capabilities, and increased efficiency in querying LLMs. The proposed ReKnoS consistently outperforms state-of-the-art baselines like ToG, KG-Agent, and StructGPT across diverse real-world knowledge graph question answering datasets.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_agent",
+    "training_type": "training_free"
+  },
+  {
+    "title": "RuAG: Learned-rule-augmented Generation for Large Language Models",
+    "authors": "Yudi Zhang, Pei Xiao, Lu Wang, Chaoyun Zhang, Meng Fang, Yali Du, Yevgeniy Puzyrev, Randolph Yao, Si Qin, Qingwei Lin, Mykola Pechenizkiy, Dongmei Zhang, Saravan Rajmohan, Qi Zhang",
+    "venue": "ICLR",
+    "year": "2025",
+    "arxiv_id": "2411.03349",
+    "pdf_url": "https://arxiv.org/pdf/2411.03349",
+    "abstract": "In-context learning (ICL) and Retrieval-Augmented Generation (RAG) have gained attention for their ability to enhance LLMs' reasoning by incorporating external knowledge but suffer from limited contextual window size, leading to insufficient information injection. To this end, we propose a novel framework, RuAG, to automatically distill large volumes of offline data into interpretable first-order logic rules, which are injected into LLMs to boost their reasoning capabilities. Our method begins by formulating the search process relying on LLMs' commonsense, where LLMs automatically define head and body predicates. Then, RuAG applies Monte Carlo Tree Search (MCTS) to address the combinational searching space and efficiently discover logic rules from data. The resulting logic rules are translated into natural language, allowing targeted knowledge injection and seamless integration into LLM prompts for LLM's downstream task reasoning. We evaluate our framework on public and private industrial tasks, including natural language processing, time-series, decision-making, and industrial tasks, showing its effectiveness in enhancing LLM's capability over diverse tasks.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_agent",
+    "training_type": "training_free"
+  },
+  {
+    "title": "KnowAgent: Knowledge-Augmented Planning for LLM-Based Agents",
+    "authors": "Yuqi Zhu, Shuofei Qiao, Yixin Ou, Shumin Deng, Shiwei Lyu, Yue Shen, Lei Liang, Jinjie Gu, Huajun Chen, Ningyu Zhang",
+    "venue": "NAACL Findings",
+    "year": "2025",
+    "arxiv_id": "2403.03101",
+    "pdf_url": "https://aclanthology.org/2025.findings-naacl.205.pdf",
+    "abstract": "Large Language Models (LLMs) have demonstrated great potential in complex reasoning tasks, yet they fall short when tackling more sophisticated challenges, especially when interacting with environments through generating executable actions. This inadequacy primarily stems from the lack of built-in action knowledge in language agents, which fails to effectively guide the planning trajectories during task solving and results in planning hallucination. To address this issue, we introduce KnowAgent, a novel approach designed to enhance the planning capabilities of LLMs by incorporating explicit action knowledge. Specifically, KnowAgent employs an action knowledge base and a knowledgeable self-learning strategy to constrain the action path during planning, enabling more reasonable trajectory synthesis, and thereby enhancing the planning performance of language agents. Experimental results on HotpotQA and ALFWorld based on various backbone models demonstrate that KnowAgent can achieve comparable or superior performance to existing baselines. Further analysis indicates the effectiveness of KnowAgent in terms of planning hallucinations mitigation.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_agent",
+    "training_type": "training_free"
+  },
+  {
+    "title": "ReKG-MCTS: Reinforcing LLM Reasoning on Knowledge Graphs via Training-Free Monte Carlo Tree Search",
+    "authors": "Xiaozhuang Song, Shufei Zhang, Tianshu Yu",
+    "venue": "ACL Findings",
+    "year": "2025",
+    "arxiv_id": "2506.13241",
+    "pdf_url": "https://aclanthology.org/2025.findings-acl.484.pdf",
+    "abstract": "Recent advancements in large language models (LLMs) have shown promising capabilities in knowledge graph (KG) reasoning. However, existing methods often rely on supervised pipelines or iterative chain-of-thought prompting, limiting their generalization to novel KGs and underutilizing the rich semantic and structural information embedded in KGs. We propose ReKG-MCTS, a novel training-free framework that synergizes Monte Carlo Tree Search (MCTS) with LLM capabilities to enable dynamic reasoning over KGs. ReKG-MCTS conceptualizes KG reasoning as a decision-making process, where MCTS strategically explores paths over KG while LLMs provide semantic guidance for reasoning paths. The framework consists of four phases: (1) UCB-based node selection that balances exploration-exploitation on KG, (2) path expansion with KG structural constraints, (3) LLM-guided MC rollouts for simulation, and (4) value backpropagation. Experimental results on WebQSP and CWQ demonstrate that ReKG-MCTS outperforms existing training-free methods and achieves competitive performance compared to fine-tuned baselines.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_agent",
+    "training_type": "training_free"
+  },
+  {
+    "title": "AGENTiGraph: A Multi-Agent Knowledge Graph Framework for Interactive, Domain-Specific LLM Chatbots",
+    "authors": "Xinjie Zhao, Rayan Sayyad Yousefi, Hugo Almeida, Yutaka Matsuo, Chanjun Park, Irene Li",
+    "venue": "CIKM",
+    "year": "2025",
+    "arxiv_id": "2508.02999",
+    "pdf_url": "https://arxiv.org/pdf/2508.02999",
+    "abstract": "Large Language Models (LLMs) have made significant strides in natural language understanding but face limitations in handling domain-specific data, particularly through their interaction with knowledge graphs. To address this, we present AGENTiGraph (Adaptive Generative ENgine for Task-based Interaction and Graphical Representation), a user-friendly, agent-driven system that enables intuitive interaction and management of domain-specific data through the manipulation of knowledge graphs in natural language. It gives non-technical users a complete, visual solution to incrementally build and refine their knowledge bases, allowing multi-round dialogues and dynamic updates without specialized query languages. The flexible design of AGENTiGraph, including intent classification, task planning, and automatic knowledge integration, ensures seamless reasoning between diverse tasks. Evaluated on a 3,500-query benchmark within an educational scenario, the system outperforms strong zero-shot baselines (achieving 95.12% classification accuracy, 90.45% execution success), indicating its potential in diverse domains.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_agent",
+    "training_type": "training_free"
+  },
+  {
+    "title": "AgREE: Agentic Reasoning for Knowledge Graph Completion on Emerging Entities",
+    "authors": "Ruochen Zhao, Simone Conia, Eric Peng, Min Li, Saloni Potdar",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2508.04118",
+    "pdf_url": "https://arxiv.org/pdf/2508.04118",
+    "abstract": "Open-domain Knowledge Graph Completion (KGC) faces significant challenges in an ever-changing world, especially with the continual emergence of new entities in daily news. Existing approaches mainly rely on pretrained language models' parametric knowledge, pre-constructed queries, or single-step retrieval, typically requiring substantial supervision and training data, yet often fail to capture comprehensive and up-to-date information about unpopular and/or emerging entities. To address these limitations, we propose AgREE, a novel agent-based framework that combines iterative retrieval actions and multi-step reasoning to dynamically construct rich knowledge graph triplets. Experiments show that, despite requiring zero training efforts, AgREE significantly outperforms existing methods in constructing knowledge graph triplets, especially for emerging entities that were not seen during language models' training processes, outperforming previous methods by up to 13.7%. Moreover, we propose a new evaluation methodology that addresses a fundamental weakness of existing setups and a new benchmark for KGC on emerging entities.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_agent",
+    "training_type": "training_free"
+  },
+  {
+    "title": "Agent-as-a-Graph: Knowledge Graph-Based Tool and Agent Retrieval for LLM Multi-Agent Systems",
+    "authors": "Bowen Wei, Sheng Zhang, Yifan Yu, Yawen Wu, Hao Cheng, Bryan Catanzaro, Mohit Iyyer, Hoifung Poon",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2511.18194",
+    "pdf_url": "https://arxiv.org/pdf/2511.18194",
+    "abstract": "Recent advances in Large Language Model (LLM) Multi-Agent Systems (MAS) enable scalable orchestration of specialized sub-agents, each coordinating hundreds or thousands of tools. However, when given complex queries, a multi-agent orchestrator must identify both the right sub-agent and the right tools to invoke. Existing retrieval methods address tool selection in isolation and overlook the dependency between sub-agents and the tools they expose. To address this, we propose Agent-as-a-Graph, an approach that represents both tools and their parent agents as nodes and edges in a knowledge graph. Tools and agent metadata are jointly indexed; in retrieval, weighted Reciprocal Rank Fusion (RRF) is applied for reranking tools and agents, and parent agents are traversed in the knowledge graph for the final set of agents. Agent-as-a-Graph demonstrates substantial improvements over baselines on the LiveMCPBench, achieving up to +20.8% Recall@5 and +18.0% NDCG@5 for tool retrieval.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_agent",
+    "training_type": "training_free"
+  },
+  {
+    "title": "ODA: Observation-Driven Agent for integrating LLMs and Knowledge Graphs",
+    "authors": "Lei Sun, Zhengwei Tao, Youdi Li, Hiroshi Arakawa",
+    "venue": "ACL Findings",
+    "year": "2024",
+    "arxiv_id": "2404.07677",
+    "pdf_url": "https://arxiv.org/pdf/2404.07677",
+    "abstract": "The integration of Large Language Models (LLMs) and knowledge graphs (KGs) has achieved remarkable success in various natural language processing tasks. However, existing methodologies that integrate LLMs and KGs often navigate the task-solving process solely based on the LLM's analysis of the question, overlooking the rich cognitive potential inherent in the vast knowledge encapsulated in KGs. To address this issue, we propose Observation-Driven Agent (ODA), a novel AI agent framework tailored for tasks involving KGs. ODA incorporates KG reasoning abilities via global observation, which enhances reasoning capabilities through a cyclical paradigm of observation, action, and reflection. Confronting the exponential explosion of knowledge during observation, we innovatively design a recursive observation mechanism. Subsequently, we integrate the observed knowledge into the action and reflection modules. Through extensive experiments, ODA demonstrates state-of-the-art performance on several datasets, notably achieving accuracy improvements of 12.87% and 8.9%.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_agent",
+    "training_type": "training_free"
+  }
+]

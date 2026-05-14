@@ -1,0 +1,72 @@
+[
+  {
+    "title": "Can LLMs be Good Graph Judge for Knowledge Graph Construction?",
+    "authors": "Haoyu Huang, Chong Chen, Conghui He",
+    "venue": "EMNLP 2025",
+    "year": "2025",
+    "arxiv_id": "2411.17388",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-main.554.pdf",
+    "abstract": "GraphJudger is a KG construction framework that addresses three main challenges: large amounts of noise in real-world documents resulting in messy information extraction, naive LLMs usually extracting inaccurate knowledge from domain-specific documents, and hallucination phenomena that cannot be overlooked when directly using LLMs to construct KGs. The framework consists of three modules: the Entity-Centric Iterative Text Denoising module, the Knowledge Aware Instruction Tuning module and the Graph Judgement module. An entity-centric strategy was designed to eliminate noise information in documents, and an LLM was fine-tuned as a graph judge to enhance the quality of generated KGs. Experiments on two general and one domain-specific text-graph pair datasets demonstrate state-of-the-art performance against various baseline methods with strong generalization abilities.",
+    "source_lists": [
+      "kg_construction"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Hyper-KGGen: A Skill-Driven Knowledge Extractor for High-Quality Knowledge Hypergraph Generation",
+    "authors": "Rizhuo Huang, et al.",
+    "venue": "arXiv preprint",
+    "year": "2026",
+    "arxiv_id": "2602.19543",
+    "pdf_url": "https://arxiv.org/pdf/2602.19543",
+    "abstract": "Hyper-KGGen is a novel skill-driven framework designed for high-quality knowledge hypergraph generation. The framework addresses knowledge hypergraph generation through three main mechanisms: (1) Coarse-to-Fine Extraction: It introduces a mechanism that initially establishes a skeletal graph of entities and binary relations, then progressively enriches it with spatiotemporal details to form complex n-ary hyperedges, realizing full-dimensional knowledge modeling; (2) Adaptive Skill Acquisition: To overcome the scenario gap, the framework proposes an adaptive skill acquisition mechanism that actively distills high-quality extraction skills from the model's own execution history, evolving a Global Skill Library; (3) Stability-based Reward Strategy: Extraction stability serves as a relative reward signal to induce high-quality skills from unstable traces and missed predictions. The paper also presents HyperDocRED, a rigorously annotated benchmark for document-level knowledge hypergraph extraction.",
+    "source_lists": [
+      "kg_construction"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  },
+  {
+    "title": "UrbanKGent: A Unified Large Language Model Agent Framework for Urban Knowledge Graph Construction",
+    "authors": "Yansong Ning, Hao Liu, et al.",
+    "venue": "NeurIPS 2024 (relevant 2024-2025 reference)",
+    "year": "2024",
+    "arxiv_id": "2402.06861",
+    "pdf_url": "https://arxiv.org/pdf/2402.06861",
+    "abstract": "UrbanKGent is a unified large language model agent framework for urban knowledge graph construction. Urban knowledge graphs have emerged as a building block to extract critical knowledge from multi-sourced urban data, but urban knowledge graph construction still heavily relies on manual effort. The framework includes three main components: (1) Instruction Generation: constructs a knowledgeable instruction set for UrbanKGC tasks (such as relational triplet extraction and knowledge graph completion) via heterogeneity-aware and geospatial-infused instruction generation; (2) Trajectory Refinement: a tool-augmented iterative trajectory refinement module is proposed to enhance and refine trajectories distilled from GPT-4; (3) Model Fine-tuning: through hybrid instruction fine-tuning with augmented trajectories on Llama 2 and Llama 3, the framework produces UrbanKGC agent variants. The UrbanKGent family can significantly outperform 31 baselines in UrbanKGC tasks and surpass GPT-4 by more than 10% with approximately 20 times lower cost.",
+    "source_lists": [
+      "kg_construction"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  },
+  {
+    "title": "AutoGraph-R1: End-to-End Reinforcement Learning for Knowledge Graph Construction",
+    "authors": "Yixin Cao, Jingyi Yuan, Yefei Zou",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2510.15339",
+    "pdf_url": "https://arxiv.org/pdf/2510.15339",
+    "abstract": "Knowledge Graphs (KGs) provide structured external knowledge for Retrieval-Augmented Generation (RAG) systems. Current methods for KG construction are largely decoupled from their downstream application, yielding suboptimal graph structures. To address this, we propose AutoGraph-R1, the first framework to directly optimize KG construction for task performance using Reinforcement Learning (RL). AutoGraph-R1 trains an LLM constructor by framing graph generation as a policy learning problem, where the reward is derived from the graph's functional utility in a RAG pipeline. We design two novel, task-aware reward functions, one for graphs as Knowledge Carriers and another as Knowledge Indices. Across multiple QA benchmarks, AutoGraph-R1 consistently enables graph RAG methods to achieve significant performance gains over using task-agnostic baseline graphs.",
+    "source_lists": [
+      "kg_rag"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Agentic-KGR: Co-evolutionary Knowledge Graph Construction through Multi-Agent Reinforcement Learning",
+    "authors": "Pengshuai Li, Yang Sun, Bingsheng Tong",
+    "venue": "arXiv",
+    "year": "2025",
+    "arxiv_id": "2510.09156",
+    "pdf_url": "https://arxiv.org/pdf/2510.09156",
+    "abstract": "Current knowledge-enhanced large language models (LLMs) rely on static, pre-constructed knowledge bases that suffer from coverage gaps and temporal obsolescence, limiting their effectiveness in dynamic information environments. We present Agentic-KGR, a novel framework enabling co-evolution between LLMs and knowledge graphs (KGs) through multi-round reinforcement learning (RL). Our approach introduces three key innovations: (1) a dynamic schema expansion mechanism that systematically extends graph ontologies beyond pre-defined boundaries during training; (2) a retrieval-augmented memory system enabling continuous optimization between model parameters and knowledge structures through bidirectional interaction; (3) a learnable multi-scale prompt compression approach that preserves critical information while reducing computational complexity through adaptive sequence optimization. Experimental results demonstrate substantial improvements over supervised baselines and single-round RL approaches in knowledge extraction tasks. When integrated with GraphRAG, Agentic-KGR achieves up to +33.3 points improvement over existing RL methods in graph extraction and +12.8 points in downstream QA tasks.",
+    "source_lists": [
+      "kg_agent"
+    ],
+    "category": "kg_construction",
+    "training_type": "training_required"
+  }
+]
