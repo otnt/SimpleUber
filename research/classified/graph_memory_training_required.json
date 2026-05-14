@@ -1,0 +1,72 @@
+[
+  {
+    "title": "In Prospect and Retrospect: Reflective Memory Management for Long-term Personalized Dialogue Agents",
+    "authors": "Zhen Tan, Jun Yan, I-Hung Hsu, Rujun Han, Zifeng Wang, Long T. Le, Yiwen Song, Yanfei Chen, Hamid Palangi, George Lee, Anand Iyer, Tianlong Chen, Huan Liu, Chen-Yu Lee, Tomas Pfister",
+    "venue": "ACL 2025",
+    "year": "2025",
+    "arxiv_id": "2503.08026",
+    "pdf_url": "https://arxiv.org/pdf/2503.08026",
+    "abstract": "Large Language Models (LLMs) have made significant progress in open-ended dialogue, yet their inability to retain and retrieve relevant information from long-term interactions limits their effectiveness in applications requiring sustained personalization. External memory mechanisms have been proposed to address this limitation, enabling LLMs to maintain conversational continuity. However, existing approaches struggle with two key challenges. First, rigid memory granularity fails to capture the natural semantic structure of conversations, leading to fragmented and incomplete representations. Second, fixed retrieval mechanisms cannot adapt to diverse dialogue contexts and user interaction patterns. In this work, we propose Reflective Memory Management (RMM), a novel mechanism for long-term dialogue agents, integrating forward- and backward-looking reflections: (1) Prospective Reflection, which dynamically summarizes interactions across granularities-utterances, turns, and sessions-into a personalized memory bank for effective future retrieval, and (2) Retrospective Reflection, which iteratively refines the retrieval in an online reinforcement learning (RL) manner based on LLMs' cited evidence. Experiments show that RMM demonstrates consistent improvement across various metrics and benchmarks. For example, RMM shows more than 10% accuracy improvement over the baseline without memory management on the LongMemEval dataset.",
+    "source_lists": [
+      "graph_memory"
+    ],
+    "category": "graph_memory",
+    "training_type": "training_required"
+  },
+  {
+    "title": "From Experience to Strategy: Empowering LLM Agents with Trainable Graph Memory",
+    "authors": "Siyu Xia, Zekun Xu, Jiajun Chai, Wentian Fan, Yan Song, Xiaohan Wang, Guojun Yin, Wei Lin, Haifeng Zhang, Jun Wang",
+    "venue": "arXiv preprint (under review at ICLR 2026)",
+    "year": "2025",
+    "arxiv_id": "2511.07800",
+    "pdf_url": "https://arxiv.org/pdf/2511.07800",
+    "abstract": "Memory is increasingly recognized as a cornerstone for the long-term decision-making capabilities of LLM-based agents, with experiences playing a pivotal role in guiding current behaviors based on past interactions. However, LLMs acquire experience either through implicit memory via training, which suffers from catastrophic forgetting and limited interpretability, or explicit memory via prompting, which lacks adaptability. We introduce a novel agent-centric, trainable, multi-layered graph memory framework that abstracts raw agent trajectories into structured decision paths in a state machine, and further distills them into human-interpretable strategic meta-cognition. A reinforcement-based weight optimization procedure integrates these optimized strategies into the LLM agent's training loop through meta-cognitive prompting. Empirical results across diverse benchmarks demonstrate that our framework consistently improves agent performance, providing a scalable and interpretable approach to lifelong learning in language agents.",
+    "source_lists": [
+      "graph_memory"
+    ],
+    "category": "graph_memory",
+    "training_type": "training_required"
+  },
+  {
+    "title": "MemGen: Weaving Generative Latent Memory for Self-Evolving Agents",
+    "authors": "Guibin Zhang, Muxin Fu, Guancheng Wan, Kun Wang, Tianlong Chen, Shuicheng Yan",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2509.24704",
+    "pdf_url": "https://arxiv.org/pdf/2509.24704",
+    "abstract": "Agent memory shapes how Large Language Model (LLM)-powered agents, akin to the human brain, progressively refine themselves through environment interactions. Existing paradigms remain constrained: parametric memory forcibly adjusts model parameters, and retrieval-based memory externalizes experience into structured databases, yet neither captures the fluid interweaving of reasoning and memory that underlies human cognition. We introduce MemGen, a dynamic generative memory framework that equips agents with a human-esque cognitive faculty. It consists of a memory trigger, which monitors the agent's reasoning state to decide explicit memory invocation, and a memory weaver, which takes the agent's current state as stimulus to construct a latent token sequence as machine-native memory to enrich its reasoning. Extensive experiments across eight benchmarks show that MemGen surpasses leading external memory systems such as ExpeL and AWM by up to 38.22%, exceeds GRPO by up to 13.44%, and exhibits strong cross-domain generalization ability. Moreover, we find that without explicit supervision, MemGen spontaneously evolves distinct human-like memory faculties, including planning memory, procedural memory, and working memory, suggesting an emergent trajectory toward more naturalistic forms of machine cognition.",
+    "source_lists": [
+      "graph_memory"
+    ],
+    "category": "graph_memory",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Memory-R1: Enhancing Large Language Model Agents to Manage and Utilize Memories via Reinforcement Learning",
+    "authors": "Sikuan Yan, Xiufeng Yang, Zuchao Huang, Ercong Nie, Zifeng Ding, Zonggen Li, Xiaowen Ma, Jinhe Bi, Kristian Kersting, Jeff Z. Pan, Hinrich Schütze, Volker Tresp, Yunpu Ma",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2508.19828",
+    "pdf_url": "https://arxiv.org/pdf/2508.19828",
+    "abstract": "Large Language Models (LLMs) have demonstrated impressive capabilities across a wide range of NLP tasks, but they remain fundamentally stateless, constrained by limited context windows that hinder long-horizon reasoning. Recent efforts to address this limitation often augment LLMs with an external memory bank, yet most existing pipelines are static and heuristic-driven, lacking a learned mechanism for deciding what to store, update, or retrieve. We introduce Memory-R1, a reinforcement learning (RL) framework that equips LLMs with the ability to actively manage and utilize external memory through two specialized agents: a Memory Manager that learns structured operations, including ADD, UPDATE, DELETE, and NOOP; and an Answer Agent that pre-selects and reasons over relevant entries. Both agents are fine-tuned with outcome-driven RL (PPO and GRPO), enabling adaptive memory management with minimal supervision. With as few as 152 training examples, Memory-R1 outperforms the strongest baselines on the LOCOMO benchmark, generalizing across question types and LLM backbones.",
+    "source_lists": [
+      "graph_memory"
+    ],
+    "category": "graph_memory",
+    "training_type": "training_required"
+  },
+  {
+    "title": "Mem-α: Learning Memory Construction via Reinforcement Learning",
+    "authors": "Yu Wang, Ryuichi Takanobu, Zhiqi Liang, Yuzhen Mao, Yuanzhe Hu, Julian McAuley, Xiaojian Wu",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2509.25911",
+    "pdf_url": "https://arxiv.org/pdf/2509.25911",
+    "abstract": "Large language model (LLM) agents are constrained by limited context windows, necessitating external memory systems for long-term information understanding. Current memory-augmented agents typically depend on pre-defined instructions and tools for memory updates. However, language models may lack the ability to determine which information to store, how to structure it, and when to update it, especially as memory systems become more complex. To this end, we propose Mem-alpha, a reinforcement learning framework that trains agents to effectively manage complex memory systems through interaction and feedback. During training, agents process sequential information chunks, learn to extract and store relevant content, then update the memory system. The reward signal derives from downstream question-answering accuracy over the full interaction history, directly optimizing for memory construction. To illustrate the effectiveness of our training framework, we design a memory architecture comprising core, episodic, and semantic components, equipped with multiple tools for memory operations. Empirical evaluation demonstrates that Mem-alpha achieves significant improvements over existing memory-augmented agent baselines. Despite being trained exclusively on instances with a maximum length of 30k tokens, our agents exhibit remarkable generalization to sequences exceeding 400k tokens, over 13x the training length, highlighting the robustness of Mem-alpha.",
+    "source_lists": [
+      "graph_memory"
+    ],
+    "category": "graph_memory",
+    "training_type": "training_required"
+  }
+]
