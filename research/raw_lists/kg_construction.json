@@ -1,0 +1,290 @@
+[
+  {
+    "title": "AutoSchemaKG: Autonomous Knowledge Graph Construction through Dynamic Schema Induction from Web-Scale Corpora",
+    "authors": "Jiaxin Bai, Wei Fan, Qi Hu",
+    "venue": "arXiv preprint (HKUST-KnowComp)",
+    "year": "2025",
+    "arxiv_id": "2505.23628",
+    "pdf_url": "https://arxiv.org/pdf/2505.23628",
+    "abstract": "AutoSchemaKG is a framework for fully autonomous knowledge graph construction that eliminates the need for predefined schemas. The system leverages large language models to simultaneously extract knowledge triples and induce comprehensive schemas directly from text, modeling both entities and events while employing conceptualization to organize instances into semantic categories. Processing over 50 million documents, the researchers construct ATLAS (Automated Triple Linking And Schema induction), a family of knowledge graphs with 900+ million nodes and 5.9 billion edges. This approach outperforms state-of-the-art baselines on multi-hop QA tasks and enhances LLM factuality, with schema induction achieving 92% semantic alignment with human-crafted schemas with zero manual intervention."
+  },
+  {
+    "title": "KGGen: Extracting Knowledge Graphs from Plain Text with Language Models",
+    "authors": "Belinda Mo, Kyssen Yu, Joshua Kazdan",
+    "venue": "NeurIPS 2025",
+    "year": "2025",
+    "arxiv_id": "2502.09956",
+    "pdf_url": "https://arxiv.org/pdf/2502.09956",
+    "abstract": "Recent interest in building foundation models for knowledge graphs (KGs) has highlighted a fundamental challenge: knowledge-graph data is relatively scarce. The best-known KGs are primarily human-labeled, created by pattern-matching, or extracted using early NLP techniques. While human-generated KGs are in short supply, automatically extracted KGs are of questionable quality. We present KGGen, a package that uses language models to create high-quality graphs from plaintext. Unlike other KG extractors, KGGen clusters related entities to reduce sparsity in extracted KGs. KGGen is available as a Python library (pip install kg-gen). Along with KGGen, we release the first benchmark, Measure of Information in Nodes and Edges (MINE), that tests an extractor's ability to produce a useful KG from plain text. We benchmark our new tool against existing extractors and demonstrate far superior performance, scoring 66.07% on average vs. 47.80% for GraphRAG and 29.84% for OpenIE."
+  },
+  {
+    "title": "Automated Knowledge Graph Construction using Large Language Models and Sentence Complexity Modelling",
+    "authors": "Sydney Anuyah, Mehedi Mahmud Kaushik, Sri Rama Krishna Reddy Dwarampudi",
+    "venue": "EMNLP 2025",
+    "year": "2025",
+    "arxiv_id": "2509.17289",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-main.783.pdf",
+    "abstract": "CoDe-KG is an open-source, end-to-end pipeline for extracting sentence-level knowledge graphs by combining robust coreference resolution with syntactic sentence decomposition. On relation extraction (RE), the pipeline achieves 65.8% macro-F1 on REBEL, an 8-point gain over the prior state of the art, and 75.7% micro-F1 on WebNLG2, while matching or exceeding performance on Wiki-NRE and CaRB. The authors contributed a training corpus of 7248 rows for sentence complexity, 200 rows of gold human annotations for coreference resolution using lung-cancer abstracts from PubMed, 900 rows of gold human annotations for sentence conversion policies, and 398 triples of gold human annotations. Additionally, the model generates a dataset of over 150,000 knowledge triples, which is open source."
+  },
+  {
+    "title": "Can LLMs be Good Graph Judge for Knowledge Graph Construction?",
+    "authors": "Haoyu Huang, Chong Chen, Conghui He",
+    "venue": "EMNLP 2025",
+    "year": "2025",
+    "arxiv_id": "2411.17388",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-main.554.pdf",
+    "abstract": "GraphJudger is a KG construction framework that addresses three main challenges: large amounts of noise in real-world documents resulting in messy information extraction, naive LLMs usually extracting inaccurate knowledge from domain-specific documents, and hallucination phenomena that cannot be overlooked when directly using LLMs to construct KGs. The framework consists of three modules: the Entity-Centric Iterative Text Denoising module, the Knowledge Aware Instruction Tuning module and the Graph Judgement module. An entity-centric strategy was designed to eliminate noise information in documents, and an LLM was fine-tuned as a graph judge to enhance the quality of generated KGs. Experiments on two general and one domain-specific text-graph pair datasets demonstrate state-of-the-art performance against various baseline methods with strong generalization abilities."
+  },
+  {
+    "title": "KARMA: Leveraging Multi-Agent LLMs for Automated Knowledge Graph Enrichment",
+    "authors": "Yuxing Lu, Jinzhuo Wang",
+    "venue": "NeurIPS 2025 (Spotlight)",
+    "year": "2025",
+    "arxiv_id": "2502.06472",
+    "pdf_url": "https://arxiv.org/pdf/2502.06472",
+    "abstract": "KARMA is a novel framework employing multi-agent large language models to automate KG enrichment through structured analysis of unstructured text. The approach employs nine collaborative agents, spanning entity discovery, relation extraction, schema alignment, and conflict resolution, that iteratively parse documents, verify extracted knowledge, and integrate it into existing graph structures while adhering to domain-specific schema. The multi-agent architecture enables cross-agent verification: Relationship Extraction Agents validate candidate entities against Schema Alignment outputs, while Conflict Resolution Agents resolve contradictions through LLM-based debate mechanisms. Experiments on 1,200 PubMed articles from three different domains demonstrate KARMA's effectiveness in knowledge graph enrichment, identifying up to 38,230 new entities while achieving 83.1% LLM-verified correctness and reducing conflict edges by 18.6% through multi-layer assessments."
+  },
+  {
+    "title": "OneKE: A Dockerized Schema-Guided LLM Agent-based Knowledge Extraction System",
+    "authors": "Yujie Luo, Xiangyuan Ru, Kangwei Liu",
+    "venue": "WWW 2025 (Demo)",
+    "year": "2025",
+    "arxiv_id": "2412.20005",
+    "pdf_url": "https://arxiv.org/pdf/2412.20005",
+    "abstract": "OneKE is a dockerized schema-guided knowledge extraction system that can extract knowledge from the Web and raw PDF Books, and supports various domains (science, news, etc.). The system is designed with multiple agents and a configure knowledge base, where different agents perform their respective roles to enable support for various extraction scenarios. The configure knowledge base facilitates schema configuration, error case debugging and correction, further improving the performance. OneKE supports multiple information extraction tasks including Named Entity Recognition (NER), Relation Extraction (RE), and Event Extraction (EE). The code has been open-sourced at https://github.com/zjunlp/OneKE."
+  },
+  {
+    "title": "Aligning Vision to Language: Annotation-Free Multimodal Knowledge Graph Construction for Enhanced LLMs Reasoning",
+    "authors": "Junming Liu, Siyuan Meng, Yanting Gao",
+    "venue": "ICCV 2025",
+    "year": "2025",
+    "arxiv_id": "2503.12972",
+    "pdf_url": "https://arxiv.org/pdf/2503.12972",
+    "abstract": "VaLiK (Vision-align-to-Language integrated Knowledge Graph) is a novel framework designed to empower LLMs with advanced multimodal reasoning. The approach cascades pre-trained Vision-Language Models (VLMs) to align image features with text, transforming them into descriptions that encapsulate image-specific information, and includes a cross-modal similarity verification mechanism to quantify semantic consistency and filter out noise introduced during feature alignment. VaLiK adopts an annotation-free approach to MMKG construction and eliminates the need for manually annotated image captions in both the knowledge extraction and construction phases while preserving visual details typically missing in generic text descriptions. Even without manually annotated image captions, the refined descriptions alone suffice to construct the MMKG, achieving substantial storage efficiency gains while maintaining direct entity-to-image linkage capability. Experimental results on multimodal reasoning tasks demonstrate that LLMs augmented with VaLiK outperform previous state-of-the-art models."
+  },
+  {
+    "title": "Graphusion: A RAG Framework for Scientific Knowledge Graph Construction with a Global Perspective",
+    "authors": "Rui Yang, Boming Yang, Xinjie Zhao",
+    "venue": "WWW 2025 (NLP4KGC Workshop, Companion Proceedings)",
+    "year": "2025",
+    "arxiv_id": "2410.17600",
+    "pdf_url": "https://arxiv.org/pdf/2410.17600",
+    "abstract": "Graphusion is a zero-shot KGC framework from free text. Most existing approaches focus on a local perspective, extracting knowledge triplets from individual sentences or documents, missing a fusion process to combine the knowledge in a global KG. Graphusion is constructed in three steps: in Step 1, seed entities are extracted using topic modeling to guide the final KG to include the most relevant entities; in Step 2, candidate triplet extraction is conducted using LLMs; in Step 3, a novel fusion module provides a global view of the extracted knowledge, incorporating entity merging, conflict resolution, and novel triplet discovery. The researchers introduce TutorQA, a new expert-verified benchmark for question-answering comprising six tasks and a total of 1,200 QA pairs. Results show Graphusion achieves scores of 2.92 and 2.37 out of 3 for entity extraction and relation recognition, respectively, and using the Graphusion-constructed KG yields a 9.2% accuracy improvement on sub-graph completion."
+  },
+  {
+    "title": "Taxonomy-Driven Knowledge Graph Construction for Domain-Specific Scientific Applications",
+    "authors": "Jo-Pan and collaborators",
+    "venue": "ACL 2025 Findings",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.findings-acl.223.pdf",
+    "abstract": "The paper presents a taxonomy-driven framework for constructing domain-specific knowledge graphs (KGs) that integrates structured taxonomies, Large Language Models (LLMs) and Retrieval-Augmented Generation (RAG). Existing methods often neglect curated taxonomies (hierarchies of verified entities and relationships), and LLMs frequently struggle to extract KGs in specialized domains. Through a climate science case study using an annotated dataset of 25 publications (1,705 entity-publication links, 3,618 expert-validated relationships), the research demonstrates that taxonomy-guided LLM prompting combined with RAG-based validation reduces hallucinations by 23.3% while improving F1 scores by 13.9% compared to baselines without the proposed techniques. The contributions include: a generalizable methodology for taxonomy-aligned KG construction; a reproducible annotation pipeline; the first benchmark dataset for climate science information retrieval; and empirical insights into combining structured taxonomies with LLMs for specialized domains."
+  },
+  {
+    "title": "DIAL-KG: Schema-Free Incremental Knowledge Graph Construction via Dynamic Schema Induction and Evolution-Intent Assessment",
+    "authors": "Authors per arXiv listing",
+    "venue": "arXiv preprint",
+    "year": "2026",
+    "arxiv_id": "2603.20059",
+    "pdf_url": "https://arxiv.org/pdf/2603.20059",
+    "abstract": "DIAL-KG is a closed-loop framework for incremental KG construction orchestrated by a Meta-Knowledge Base (MKB). The framework operates in a three-stage cycle: (i) Dual-Track Extraction, which ensures knowledge completeness by defaulting to triple generation and switching to event extraction for complex knowledge; (ii) Governance Adjudication, which ensures the fidelity and currency of extracted facts to prevent hallucinations and knowledge staleness; and (iii) Schema Evolution, in which new schemas are induced from validated knowledge to guide subsequent construction cycles, and knowledge from the current round is incrementally applied to the existing KG. By routing simple attribute changes (Static Track) and complex structural changes (Event Track) separately, DIAL-KG achieves schema-free evolution. DIAL-KG improves F1 by up to 4.7% over strong schema-free LLM baselines, achieves over 98% precision on evidence-backed soft deprecations in streaming, and delivers more compact schemas (up to 15% fewer relation types) with a 1.6-2.8 point reduction in redundancy."
+  },
+  {
+    "title": "HGNet: Scalable Foundation Model for Automated Knowledge Graph Generation from Scientific Literature",
+    "authors": "Devvrat Joshi, Islem Rekik",
+    "venue": "arXiv preprint",
+    "year": "2026",
+    "arxiv_id": "2603.23136",
+    "pdf_url": "https://arxiv.org/pdf/2603.23136",
+    "abstract": "Automated knowledge graph construction is essential for navigating rapidly expanding scientific literature, but existing approaches struggle to recognize long multi-word entities, often fail to generalize across domains, and typically overlook the hierarchical nature of scientific knowledge. HGNet operates in two stages: Stage one employs Z-NERD, a zero-shot recognizer that ensures robust domain generalization via Orthogonal Semantic Decomposition (OSD) and captures complex entities with a Multi-Scale TCQK attention mechanism. Stage two applies HGNet (Hierarchy Graph Network), which builds a latent probabilistic graph, preserves hierarchical dependencies through specialized message-passing, and enforces structural integrity via Differentiable Hierarchy Loss and Continuum Abstraction Field (CAF) Loss. The framework establishes state-of-the-art results on benchmarks such as SciERC, SciER, and SPHERE, improving NER by 8.08% and relation extraction by 5.99%. In zero-shot settings, gains are even more pronounced with improvements of 10.76% for NER and 26.2% for RE. The authors contributed SPHERE, a large-scale, multi-domain benchmark for rigorous evaluation."
+  },
+  {
+    "title": "Hyper-KGGen: A Skill-Driven Knowledge Extractor for High-Quality Knowledge Hypergraph Generation",
+    "authors": "Rizhuo Huang, et al.",
+    "venue": "arXiv preprint",
+    "year": "2026",
+    "arxiv_id": "2602.19543",
+    "pdf_url": "https://arxiv.org/pdf/2602.19543",
+    "abstract": "Hyper-KGGen is a novel skill-driven framework designed for high-quality knowledge hypergraph generation. The framework addresses knowledge hypergraph generation through three main mechanisms: (1) Coarse-to-Fine Extraction: It introduces a mechanism that initially establishes a skeletal graph of entities and binary relations, then progressively enriches it with spatiotemporal details to form complex n-ary hyperedges, realizing full-dimensional knowledge modeling; (2) Adaptive Skill Acquisition: To overcome the scenario gap, the framework proposes an adaptive skill acquisition mechanism that actively distills high-quality extraction skills from the model's own execution history, evolving a Global Skill Library; (3) Stability-based Reward Strategy: Extraction stability serves as a relative reward signal to induce high-quality skills from unstable traces and missed predictions. The paper also presents HyperDocRED, a rigorously annotated benchmark for document-level knowledge hypergraph extraction."
+  },
+  {
+    "title": "ATOM: AdapTive and OptiMized Dynamic Temporal Knowledge Graph Construction using LLMs",
+    "authors": "Yassir Lairgi, Ludovic Moncla, Khalid Benabdeslem",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2510.22590",
+    "pdf_url": "https://arxiv.org/pdf/2510.22590",
+    "abstract": "ATOM is a few-shot and scalable approach that builds and continuously updates Temporal Knowledge Graphs (TKGs) from unstructured texts. Traditional static knowledge graph construction often overlooks the dynamic and time-sensitive nature of real-world data, limiting adaptability to continuous changes. Recent zero- or few-shot approaches often suffer from instability across multiple runs, as well as incomplete coverage of key facts. ATOM proposes a framework that combines atomic fact decomposition for exhaustive and stable extraction and parallel merging for scalability. The parallel atomic merge architecture uses an efficient, parallel pairwise merge algorithm, achieving 93.8% latency reduction vs. Graphiti and 95.3% vs. iText2KG."
+  },
+  {
+    "title": "EMERGE: A Benchmark for Updating Knowledge Graphs with Emerging Textual Knowledge",
+    "authors": "Authors per arXiv listing",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2507.03617",
+    "pdf_url": "https://arxiv.org/pdf/2507.03617",
+    "abstract": "EMERGE addresses the problem of automatically updating knowledge graphs over time in response to evolving knowledge in unstructured textual sources. This requires identifying a wide range of update operations based on the state of an existing KG at a given time and the information extracted from text. EMERGE consists of 233K instances across seven yearly KG snapshots (2019-2025), with a total of 1.45M TKGU update operations. The dataset includes Wikidata KG snapshots over time paired with Wikipedia passages and their corresponding edit operations, comprising 233K Wikipedia passages aligned with 1.45 million KG edits. Both the KG size and schema evolve across snapshots; the 2019 KG snapshot contains 5.96M entities, 25.73M relations, and 5,646 relation types, while the 2025 snapshot includes 6.93M entities, 37.54M relations, and 12,304 relation types. The models are compared over triples grouped by TKGU operations: EXISTS, ADD, MINT+ADD, INFER, and DEPRECATE. Even for strong models such as GPT-5.1, performance remains low, highlighting the substantial research gap."
+  },
+  {
+    "title": "Towards Practical GraphRAG: Efficient Knowledge Graph Construction and Hybrid Retrieval at Scale (Efficient Knowledge Graph Construction and Retrieval from Unstructured Text for Large-Scale RAG Systems)",
+    "authors": "Congmin Min, et al.",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2507.03226",
+    "pdf_url": "https://arxiv.org/pdf/2507.03226",
+    "abstract": "The paper introduces an efficient knowledge graph construction pipeline that leverages dependency parsing to achieve 94% of LLM-based performance (61.87% vs. 65.83%) while significantly reducing costs and improving scalability. The framework uses a dependency-based knowledge graph construction pipeline that leverages industrial-grade NLP libraries to extract entities and relations from unstructured text, completely eliminating reliance on LLMs. The system achieves up to 15% and 4.35% improvements over traditional RAG baselines based on LLM-as-Judge and RAGAS metrics, respectively, while attaining 94% of the performance of LLM-generated knowledge graphs at significantly reduced cost and improved scalability. The paper focuses on making GraphRAG more practical for enterprise deployments by addressing computational costs and latency issues associated with traditional LLM-based knowledge graph construction."
+  },
+  {
+    "title": "ODKE+: Ontology-Guided Open-Domain Knowledge Extraction with LLMs",
+    "authors": "Samira Khorshidi, Nima Nikfarjam, et al.",
+    "venue": "arXiv preprint (Apple ML Research)",
+    "year": "2025",
+    "arxiv_id": "2509.04696",
+    "pdf_url": "https://arxiv.org/pdf/2509.04696",
+    "abstract": "ODKE+ is a production-grade system that automatically extracts and ingests millions of open-domain facts from web sources with high precision. The system combines modular components into a scalable pipeline: (1) the Extraction Initiator detects missing or stale facts, (2) the Evidence Retriever collects supporting documents, (3) hybrid Knowledge Extractors apply both pattern-based rules and ontology-guided prompting for LLMs, (4) a lightweight Grounder validates extracted facts using a second LLM, and (5) the Corroborator ranks and normalizes candidate facts for ingestion. ODKE+ dynamically generates ontology snippets tailored to each entity type to align extractions with schema constraints, enabling scalable, type-consistent fact extraction across 195 predicates. The system supports batch and streaming modes, processing over 9 million Wikipedia pages and ingesting 19 million high-confidence facts with 98.8% precision, achieving up to 48% overlap with third-party KGs and reducing update lag by 50 days on average. ODKE+ has been deployed in production since May 2025."
+  },
+  {
+    "title": "LightKGG: Simple and Efficient Knowledge Graph Generation from Textual Data",
+    "authors": "Teng Lin, et al.",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2510.23341",
+    "pdf_url": "https://arxiv.org/pdf/2510.23341",
+    "abstract": "LightKGG is a novel framework that enables efficient KG extraction from textual data using small-scale language models (SLMs). The scarcity of high-quality knowledge graphs remains a critical bottleneck for downstream AI applications, as existing extraction methods rely heavily on error-prone pattern-matching techniques or resource-intensive large language models. While recent tools leverage LLMs to generate KGs, their computational demands limit accessibility for low-resource environments. LightKGG provides two key technical innovations: (1) Context-integrated Graph extraction integrates contextual information with nodes and edges into a unified graph structure, reducing the reliance on complex semantic processing while maintaining more key information; (2) Topology-enhanced relationship inference leverages the inherent topology of the extracted graph to efficiently infer relationships. Small language models excel at entity identification, pattern matching, and semantic comprehension in structured contexts, and reasoning within graph structures helps mitigate the impact of noise compared with inference for text, while multi-path clues enhance error reduction."
+  },
+  {
+    "title": "Query-Driven Multimodal GraphRAG: Dynamic Local Knowledge Graph Construction for Online Reasoning",
+    "authors": "Bu et al.",
+    "venue": "ACL 2025 Findings",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.findings-acl.1100.pdf",
+    "abstract": "The paper addresses how recent advances in retrieval-augmented generation (RAG) and knowledge graph-enhanced RAG (GraphRAG) are constrained by static knowledge bases and ineffective multimodal data integration. The framework dynamically constructs local knowledge graphs tailored to query semantics through an approach that: 1) derives graph patterns from query semantics to guide knowledge extraction, 2) employs a multi-path retrieval strategy to pinpoint core knowledge, and 3) supplements missing multimodal information ad hoc. Experimental results on the MultimodalQA and WebQA datasets demonstrate that the framework achieves state-of-the-art performance among unsupervised competitors, particularly excelling in cross-modal understanding of complex queries. The approach adopts text prompting strategies to guide LLMs in extracting entities and relationships from document and table data for constructing structured knowledge graphs."
+  },
+  {
+    "title": "Synergizing Multimodal Temporal Knowledge Graphs and Large Language Models for Social Relation Recognition",
+    "authors": "Haorui Wang, Zheng Wang, Yuxuan Zhang",
+    "venue": "EMNLP 2025",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-main.224.pdf",
+    "abstract": "Large Language Models (LLMs) encounter significant challenges in the task of social relation recognition due to their reliance on sequential training data, which inherently restricts their capabilities. This work extracts multimodal information from videos and models social networks as spatial Knowledge Graphs (KGs) for each scene, with Temporal KGs constructed based on spatial KGs and updated along the timeline for long-term reasoning. The framework synergizes multimodal temporal KGs with LLMs to enable accurate social relation recognition from video content. The paper was authored by Haorui Wang, Zheng Wang, Yuxuan Zhang, Bo Wang, and Bin Wu and published at EMNLP 2025."
+  },
+  {
+    "title": "MMGraphRAG: Bridging Vision and Language with Interpretable Multimodal Knowledge Graphs",
+    "authors": "Wang et al.",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2507.20804",
+    "pdf_url": "https://arxiv.org/pdf/2507.20804",
+    "abstract": "MMGraphRAG integrates visual scene graphs with text KGs via a novel cross-modal fusion approach to address that GraphRAG remains text-centric due to the difficulty of constructing fine-grained Multimodal KGs (MMKGs). It introduces SpecLink, a method leveraging spectral clustering for accurate cross-modal entity linking and path-based retrieval to guide generation. The CMEL dataset was released, specifically designed for fine-grained multi-entity alignment in complex multimodal scenarios. On DocBench, MMGraphRAG achieves 76.8% overall accuracy, far exceeding NaiveRAG (59.5%) and GraphRAG (52.3%), with especially pronounced advantage in multimodal queries (88.7% accuracy). On MMLongBench, MMGraphRAG establishes a new state of the art with 38.8% accuracy and 34.1% F1 score, excelling in complex chart and figure reasoning. The framework demonstrates exceptional robustness in identifying unanswerable questions, outperforming a leading multimodal RAG method by over sixfold (35.1% vs. 5.8%)."
+  },
+  {
+    "title": "LKD-KGC: Domain-Specific KG Construction via LLM-driven Knowledge Dependency Parsing",
+    "authors": "Sun et al.",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2505.24163",
+    "pdf_url": "https://arxiv.org/pdf/2505.24163",
+    "abstract": "LKD-KGC autonomously analyzes document repositories to infer knowledge dependencies, determines optimal processing sequences via LLM-driven prioritization, and autoregressively generates entity schema by integrating hierarchical inter-document contexts. This schema guides the unsupervised extraction of entities and relationships, eliminating reliance on predefined structures or external knowledge. LKD-KGC introduced adaptive, embedding-based schema integration. It automatically extracts and merges equivalent entity types via vector clustering and LLM-based deduplication, allowing schema alignment to emerge dynamically from data. Compared with state-of-the-art baselines, LKD-KGC generally achieves improvements of 10% to 20% in both precision and recall rate, demonstrating its potential in constructing high-quality domain-specific KGs."
+  },
+  {
+    "title": "DynamicNER: A Dynamic, Multilingual, and Fine-Grained Dataset for LLM-based Named Entity Recognition",
+    "authors": "Hanjun Luo, et al.",
+    "venue": "EMNLP 2025",
+    "year": "2025",
+    "arxiv_id": "2409.11022",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-main.835/",
+    "abstract": "DynamicNER is the first NER dataset designed for LLM-based methods with dynamic categorization. The dataset is multilingual and multi-granular, covering 8 languages and 155 entity types, with corpora spanning diverse domains. Existing NER datasets are primarily designed for traditional machine learning methods and are inadequate for LLM-based methods, and the prevalent fixed and coarse-grained entity categorization fails to adequately assess the superior generalization and contextual understanding capabilities of LLM-based methods. The paper also introduces CascadeNER, a novel NER method based on a two-stage strategy and lightweight LLMs, achieving higher accuracy on fine-grained tasks while requiring fewer computational resources. CascadeNER outperforms existing methods on both fine-grained categorization and general benchmarks."
+  },
+  {
+    "title": "GLiNER2: Schema-Driven Multi-Task Learning for Structured Information Extraction",
+    "authors": "Urchade Zaratiana, Gil Pasternak, Oliver Boyd",
+    "venue": "EMNLP 2025 (System Demonstrations)",
+    "year": "2025",
+    "arxiv_id": "2507.18546",
+    "pdf_url": "https://aclanthology.org/2025.emnlp-demos.10.pdf",
+    "abstract": "GLiNER2 is a unified framework that enhances the original GLiNER architecture to support named entity recognition, text classification, and hierarchical structured data extraction within a single efficient model. Built on a fine-tuned encoder architecture, GLiNER2 maintains CPU efficiency and compact size while introducing multi-task composition through an intuitive schema-based interface. Experiments demonstrate competitive performance across diverse IE tasks with substantial improvements in deployment accessibility compared to LLM-based alternatives. GLiNER2 is released as an open-source library available through pip, complete with pre-trained models and comprehensive documentation."
+  },
+  {
+    "title": "EventRAG: Enhancing LLM Generation with Event Knowledge Graphs",
+    "authors": "Zairun Yang, Yilin Wang, Zhengyan Shi",
+    "venue": "ACL 2025",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.acl-long.830.pdf",
+    "abstract": "EventRAG first constructs an Event Knowledge Graph by extracting events and merging semantically equivalent nodes across documents, while expanding under-connected relationships. It then employs an iterative retrieval and inference strategy that explicitly captures temporal dependencies and logical relationships across events. Unlike traditional RAG, this approach identifies key events and represents them as inter-connected nodes in an Event Knowledge Graph (EKG). Experiments on UltraDomain and MultiHopRAG benchmarks show EventRAG's superiority over baseline RAG systems, with substantial gains in generation effectiveness, logical consistency, and multi-hop reasoning accuracy. The work was authored by researchers from Zhejiang University, University College London, and Ant Group."
+  },
+  {
+    "title": "LLM-empowered Knowledge Graph Construction: A Survey",
+    "authors": "Haonan Bian",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2510.20345",
+    "pdf_url": "https://arxiv.org/pdf/2510.20345",
+    "abstract": "The construction of KGs has entered a new paradigm with the advent of Large Language Models, shifting from rule-based and statistical pipelines to language-driven and generative frameworks. This survey provides a comprehensive overview of recent progress in LLM-empowered knowledge graph construction, systematically analyzing how LLMs reshape the classical three-layered pipeline of ontology engineering, knowledge extraction, and knowledge fusion. The survey reviews emerging LLM-driven approaches from two complementary perspectives: schema-based paradigms, which emphasize structure, normalization, and consistency; and schema-free paradigms, which highlight flexibility, adaptability, and open discovery. The survey outlines key trends and future research directions, including KG-based reasoning for LLMs, dynamic knowledge memory for agentic systems, and multimodal KG construction."
+  },
+  {
+    "title": "Relation as a Prior: A Novel Paradigm for LLM-based Document-level Relation Extraction",
+    "authors": "Authors per arXiv listing",
+    "venue": "arXiv preprint",
+    "year": "2025",
+    "arxiv_id": "2511.08143",
+    "pdf_url": "https://arxiv.org/pdf/2511.08143",
+    "abstract": "RelPrior is a novel paradigm for LLM-based document-level relation extraction that utilizes binary relation as a prior to extract and determine whether two entities are correlated, thereby filtering out irrelevant entity pairs and reducing prediction noise. It also utilizes predefined relation as a prior to match entities for triples extraction instead of directly predicting relation. This approach achieves state-of-the-art performance, surpassing existing LLM-based methods for document-level relation extraction. The work addresses key limitations of prior LLM-based methods, which have lagged behind traditional approaches in DocRE, a critical task for understanding complex entity relations within long context."
+  },
+  {
+    "title": "Chain of Knowledge Graph: Information-Preserving Multi-Document Summarization for Noisy Documents",
+    "authors": "Kangil Lee, Jinwoo Jang, Youngjin Lim",
+    "venue": "COLING 2025 (NeusymBridge Workshop)",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.neusymbridge-1.1/",
+    "abstract": "Chain of Knowledge Graph (CoKG) is a novel instruction prompt for multi-document summarization. The prompt extracts entities and constructs relationships between entities to form a Knowledge Graph, and then enriches these relationships to recognize potentially important entities and assess the strength of each relation. If the acquired KG meets a predefined quality level, the KG is used to summarize the given documents, which helps alleviate the information loss in multi-document summarization. Experimental results demonstrate that the prompt effectively preserves key entities and is robust to noisy documents. Published in the Proceedings of Bridging Neurons and Symbols for NLP and Knowledge Graphs Reasoning at COLING 2025."
+  },
+  {
+    "title": "Knowledge Graph-Guided Retrieval Augmented Generation (KG2RAG)",
+    "authors": "Authors from NJU Web Soft Group",
+    "venue": "NAACL 2025",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.naacl-long.449/",
+    "abstract": "KG2RAG proposes a framework that utilizes knowledge graphs to provide fact-level relationships between chunks, employing a KG-guided chunk expansion process and a KG-based chunk organization process. The approach builds knowledge graphs as an auxiliary structure to enhance retrieval augmented generation by leveraging fact-level structural relations. The framework is evaluated against strong baselines on retrieval and generation quality, showing that explicit graph guidance improves both retrieval precision and generation factuality. The work demonstrates how KG construction techniques can be applied to dynamically organize retrieved chunks for downstream LLM tasks."
+  },
+  {
+    "title": "Nested Named Entity Recognition as Single-Pass Sequence Labeling",
+    "authors": "Munoz-Ortiz et al.",
+    "venue": "EMNLP 2025 Findings",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.findings-emnlp.530/",
+    "abstract": "The paper casts nested NER as a sequence labeling task by leveraging linearization of constituency structures, reducing complexity to token classification. The method enables a single-pass approach to nested entity extraction, important for high-quality KG construction where complex multi-word entities matter. The approach achieves competitive results on standard nested NER benchmarks while offering substantially improved efficiency over multi-pass and span-based alternatives. The work has direct relevance to knowledge graph entity extraction pipelines."
+  },
+  {
+    "title": "UrbanKGent: A Unified Large Language Model Agent Framework for Urban Knowledge Graph Construction",
+    "authors": "Yansong Ning, Hao Liu, et al.",
+    "venue": "NeurIPS 2024 (relevant 2024-2025 reference)",
+    "year": "2024",
+    "arxiv_id": "2402.06861",
+    "pdf_url": "https://arxiv.org/pdf/2402.06861",
+    "abstract": "UrbanKGent is a unified large language model agent framework for urban knowledge graph construction. Urban knowledge graphs have emerged as a building block to extract critical knowledge from multi-sourced urban data, but urban knowledge graph construction still heavily relies on manual effort. The framework includes three main components: (1) Instruction Generation: constructs a knowledgeable instruction set for UrbanKGC tasks (such as relational triplet extraction and knowledge graph completion) via heterogeneity-aware and geospatial-infused instruction generation; (2) Trajectory Refinement: a tool-augmented iterative trajectory refinement module is proposed to enhance and refine trajectories distilled from GPT-4; (3) Model Fine-tuning: through hybrid instruction fine-tuning with augmented trajectories on Llama 2 and Llama 3, the framework produces UrbanKGC agent variants. The UrbanKGent family can significantly outperform 31 baselines in UrbanKGC tasks and surpass GPT-4 by more than 10% with approximately 20 times lower cost."
+  },
+  {
+    "title": "iText2KG: Incremental Knowledge Graphs Construction Using Large Language Models",
+    "authors": "Yassir Lairgi, Ludovic Moncla, et al.",
+    "venue": "WISE 2024 (frequently cited baseline for 2025 KGC work)",
+    "year": "2024",
+    "arxiv_id": "2409.03284",
+    "pdf_url": "https://arxiv.org/pdf/2409.03284",
+    "abstract": "iText2KG is a method for incremental, topic-independent KG construction without post-processing. This plug-and-play, zero-shot method comprises four modules: Document Distiller, Incremental Entity Extractor, Incremental Relation Extractor, and Graph Integrator and Visualization. It addresses limitations inherent in traditional KG construction processes, which typically depend on predefined ontologies and extensive supervised training. The method achieves document-type independence by using a flexible, user-defined blueprint to guide the extraction process, allowing it to handle both structured and unstructured texts."
+  },
+  {
+    "title": "Reflection on Knowledge Graph for Large Language Models Reasoning",
+    "authors": "Authors per ACL listing",
+    "venue": "ACL 2025 Findings",
+    "year": "2025",
+    "arxiv_id": "",
+    "pdf_url": "https://aclanthology.org/2025.findings-acl.1221.pdf",
+    "abstract": "The paper investigates how reflective use of knowledge graphs can mitigate LLM hallucinations during knowledge graph-augmented reasoning. The approach jointly constructs and refines KG triples during inference, treating reflection as a self-correction signal over extracted entities and relations. Experiments demonstrate that reflective construction yields cleaner KGs and higher downstream reasoning accuracy compared with single-pass extraction baselines. The work is relevant for end-to-end KG construction pipelines that interleave extraction, verification, and reasoning."
+  }
+]
